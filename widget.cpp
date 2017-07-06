@@ -59,7 +59,7 @@ Widget::Widget(QWidget *parent) :
     connect(ui->autoNavigationBtn,SIGNAL(clicked(bool)),
             this,SLOT(onAutoNavigationBtnClicked()));
 
-    socket = new ConnectServer;
+//    socket = new ConnectServer;
     settingDialog = new Setting(this);
 
 //    connect(settingDialog,SIGNAL(accepted()),
@@ -231,17 +231,17 @@ void Widget::onSettingBtnClicked()
 
 void Widget::onConnectBtnClicked()
 {
-    if(socket->isValid()){
-        socket->stopRead();
-        ui->connectBtn->setStyleSheet("background-color:black;color:white;");
+//    if(socket->isValid()){
+//        socket->stopRead();
+//        ui->connectBtn->setStyleSheet("background-color:black;color:white;");
 
 //        updateTimer.stop();
-        ui->connectBtn->setText("已断开");
+//        ui->connectBtn->setText("已断开");
 
-    } else {
-        socket->startRead();
-        ui->connectBtn->setText("已连接");
-        ui->connectBtn->setStyleSheet("background-color:green;color:white;");
+//    } else {
+//        socket->startRead();
+//        ui->connectBtn->setText("已连接");
+//        ui->connectBtn->setStyleSheet("background-color:green;color:white;");
 //        updateTimer.start(50);
-    }
+//    }
 }

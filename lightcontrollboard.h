@@ -2,6 +2,8 @@
 #define LIGHTCONTROLLBOARD_H
 
 #include <QWidget>
+#include "communicawidget.h"
+
 
 namespace Ui {
 class LightControllBoard;
@@ -15,10 +17,12 @@ public:
 signals:
 
 public slots:
+    void setRoadLights();
 
 
 private:
     Ui::LightControllBoard* ui;
+    CommunicaWidget *singleConnect;
 
 };
 

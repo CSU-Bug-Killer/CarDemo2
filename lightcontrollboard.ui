@@ -398,6 +398,19 @@ border-top-right-radius:15px;</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="testSend">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>530</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>testSend</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

@@ -4,7 +4,9 @@
 #include <QDialog>
 #include <QHostAddress>
 
-#include "connectserver.h"
+//#include "connectserver.h"
+#include "communicawidget.h"
+
 
 namespace Ui {
 class Setting;
@@ -26,7 +28,8 @@ private slots:
 
 private:
     Ui::Setting* ui;
-    ConnectServer* settingHost;
+//    ConnectServer* settingHost;
+    CommunicaWidget *singleConnect;
 };
 
 #endif // CONNECT_H

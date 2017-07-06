@@ -6,7 +6,7 @@
 
 QT       += core gui network
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 
 TARGET = Demo2
 TEMPLATE = app
@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     navigationcontrollboard.cpp \
     setting.cpp \
     about.cpp \
-    connectserver.cpp
+    communicawidget.cpp
+
 
 HEADERS  += widget.h \
     map.h \
@@ -35,7 +36,7 @@ HEADERS  += widget.h \
     navigationcontrollboard.h \
     setting.h \
     about.h \
-    connectserver.h
+    communicawidget.h
 
 FORMS    += widget.ui \
     welcomepage.ui \

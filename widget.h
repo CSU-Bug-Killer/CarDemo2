@@ -13,7 +13,7 @@
 #include "setting.h"
 #include "about.h"
 
-#include "connectserver.h"
+//#include "connectserver.h"
 
 namespace Ui {
 class Widget;
@@ -74,7 +74,7 @@ private:
 
     Setting* settingDialog;
 
-    ConnectServer* socket;
+//    ConnectServer* socket;
 //    About* aboutDialog;
 
     void updateQss(void);

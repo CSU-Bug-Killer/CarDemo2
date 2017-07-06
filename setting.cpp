@@ -21,7 +21,8 @@ Setting::Setting(QWidget *parent) :
     connect(ui->buttonBox,SIGNAL(rejected()),
             this,SLOT(onButtonBoxRejected()));
 
-    settingHost = new ConnectServer;
+//    settingHost = new ConnectServer;
+    singleConnect = CommunicaWidget::getInstance();
 }
 
 Setting::~Setting(){
@@ -50,13 +51,17 @@ qint16 Setting::getHostPort()
 
 void Setting::onButtonBoxAccepted()
 {
+    qDebug() << "click ok";
     if(ui->hostAddrLdt->text()==""){
         qDebug()<<"主机地址不能为空";
     }else if(ui->hostPortLdt->text()==""){
         qDebug()<<"主机端口不能为空";
     }else{
-        this->settingHost->setHost(QHostAddress(ui->hostAddrLdt->text()));
-        this->settingHost->setPort(ui->hostPortLdt->text().toInt());
+//        this->settingHost->setHost(QHostAddress(ui->hostAddrLdt->text()));
+//        this->settingHost->setPort(ui->hostPortLdt->text().toInt());
+        QString host = ui->hostAddrLdt->text();
+        QString port = ui->hostPortLdt->text();
+        singleConnect->connectServer(host,port);
         qDebug()<<"setHostInfoSetting";
         this->close();
    }
