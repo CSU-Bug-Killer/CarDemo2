@@ -8,6 +8,12 @@
 #include "carcontrollboard.h"
 #include "lightcontrollboard.h"
 #include "carmap.h"
+#include "autonavigation.h"
+#include "navigationcontrollboard.h"
+#include "setting.h"
+#include "about.h"
+
+#include "connectserver.h"
 
 namespace Ui {
 class Widget;
@@ -21,16 +27,25 @@ public:
     explicit Widget(QWidget *parent = 0);
     ~Widget();
 
+
+public slots:
+
+//    void    setHostInfo(void);
+
 private slots:
-    void on_mainBtn_clicked();
+    void onMainBtnClicked();
 
-    void on_welcomeBtn_clicked();
+    void onWelcomeBtnClicked();
 
-    void on_carMapBtn_clicked();
+    void onCarMapBtnClicked();
 
-    void on_aboutBtn_clicked();
+    void onAutoNavigationBtnClicked();
 
-    void on_helpBtn_clicked();
+    void onAboutBtnClicked();
+
+    void onSettingBtnClicked();
+
+    void onConnectBtnClicked();
 
 private:
     Ui::Widget *ui;
@@ -51,6 +66,18 @@ private:
 
     //路况监控对应红绿灯控制面板
     LightControllBoard* lightcontrollBoard;
+
+    //自动导航主页面
+    AutoNavigation* autoNavigationWidget;
+    //自动导航右侧控制面板
+    NavigationControllBoard* navigationBoard;
+
+    Setting* settingDialog;
+
+    ConnectServer* socket;
+//    About* aboutDialog;
+
+    void updateQss(void);
 
 };
 

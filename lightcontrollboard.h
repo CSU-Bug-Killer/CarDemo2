@@ -16,8 +16,10 @@ signals:
 
 public slots:
 
+
 private:
     Ui::LightControllBoard* ui;
+
 };
 
 #endif // LIGHTCONTROLLBOARD_H

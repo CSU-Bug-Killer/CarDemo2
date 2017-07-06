@@ -6,9 +6,13 @@ LightControllBoard::LightControllBoard(QWidget *parent) :
     ui(new Ui::LightControllBoard)
 {
     ui->setupUi(this);
+
+    ui->destinationLbl->hide();
+    ui->autoModelGbx->hide();
 }
 
 LightControllBoard::~LightControllBoard()
 {
     delete ui;
 }
+

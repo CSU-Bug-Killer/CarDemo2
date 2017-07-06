@@ -35,267 +35,368 @@
     </rect>
    </property>
    <property name="title">
-    <string>TrafficLights</string>
+    <string/>
    </property>
-   <widget class="QGroupBox" name="firstLightGbx">
+   <widget class="QGroupBox" name="trafficLightGbx">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
+      <y>40</y>
       <width>201</width>
-      <height>71</height>
+      <height>231</height>
      </rect>
     </property>
     <property name="title">
-     <string>1号交通灯</string>
+     <string/>
     </property>
-    <widget class="QRadioButton" name="redBtn1">
+    <widget class="QComboBox" name="lightModelCmb">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>60</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>畅通模式</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>限行模式</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>阻塞模式</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="modelLbl">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>30</y>
+       <y>60</y>
+       <width>54</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>模式控制</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="roadLbl">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>54</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>roadLbl</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="roadModelCmx">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>20</y>
+       <width>91</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>1号路口</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2号路口</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>3号路口</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>4号路口</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="firstLightLbl">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>101</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>1号交通灯</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="redBtn1">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>101</y>
        <width>31</width>
-       <height>16</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
       <string>红</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="yellowBtn1">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>30</y>
-       <width>31</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>黄</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="greenBtn1">
      <property name="geometry">
       <rect>
        <x>140</x>
-       <y>30</y>
+       <y>100</y>
        <width>31</width>
-       <height>16</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
       <string>绿</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QGroupBox" name="secondLightBtn">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>120</y>
-      <width>201</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>2号交通灯</string>
-    </property>
-    <widget class="QRadioButton" name="redBtn2">
+    <widget class="QLabel" name="secondLightLbl">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>30</y>
+       <y>140</y>
+       <width>61</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>2号交通灯</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="redBtn2">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>140</y>
        <width>31</width>
-       <height>16</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
       <string>红</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="yellowBtn2">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>30</y>
-       <width>31</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>黄</string>
      </property>
     </widget>
     <widget class="QRadioButton" name="greenBtn2">
      <property name="geometry">
       <rect>
        <x>140</x>
-       <y>30</y>
+       <y>140</y>
        <width>31</width>
-       <height>16</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
       <string>绿</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QGroupBox" name="thirdLightBtn">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>200</y>
-      <width>201</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>3号交通灯</string>
-    </property>
-    <widget class="QRadioButton" name="redBtn3">
+    <widget class="QPushButton" name="applyBtn">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>30</y>
-       <width>31</width>
-       <height>16</height>
+       <y>180</y>
+       <width>151</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>红</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="yellowBtn3">
-     <property name="geometry">
-      <rect>
-       <x>80</x>
-       <y>30</y>
-       <width>31</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>黄</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="greenBtn3">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>30</y>
-       <width>31</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>绿</string>
+      <string>应用</string>
      </property>
     </widget>
    </widget>
-   <widget class="QGroupBox" name="forthlightBtn">
+   <widget class="QGroupBox" name="autoModelGbx">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>280</y>
+      <y>360</y>
       <width>201</width>
-      <height>71</height>
+      <height>151</height>
      </rect>
     </property>
-    <property name="title">
-     <string>4号交通灯</string>
+    <property name="styleSheet">
+     <string notr="true">border-color:black;</string>
     </property>
-    <widget class="QRadioButton" name="redBtn4">
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="roadChooseLbl">
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>30</y>
-       <width>31</width>
-       <height>16</height>
+       <y>40</y>
+       <width>61</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="text">
-      <string>红</string>
+      <string>哪条路</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="yellowBtn4">
+    <widget class="QLabel" name="locationLbl">
      <property name="geometry">
       <rect>
-       <x>80</x>
-       <y>30</y>
-       <width>31</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>黄</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="greenBtn4">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>30</y>
-       <width>31</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>绿</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="trafficLightGbx">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>369</y>
-      <width>201</width>
-      <height>181</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>交通灯模式</string>
-    </property>
-    <widget class="QRadioButton" name="radioButton">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>50</y>
-       <width>89</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>畅通模式</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_2">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
+       <x>20</x>
        <y>90</y>
-       <width>89</width>
-       <height>16</height>
+       <width>51</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="text">
-      <string>限行模式</string>
+      <string>哪个位置</string>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_3">
+    <widget class="QComboBox" name="roadChooseCbx">
      <property name="geometry">
       <rect>
-       <x>60</x>
-       <y>130</y>
-       <width>89</width>
-       <height>16</height>
+       <x>90</x>
+       <y>30</y>
+       <width>81</width>
+       <height>31</height>
       </rect>
      </property>
-     <property name="text">
-      <string>施工模式</string>
-     </property>
+     <item>
+      <property name="text">
+       <string>1号路</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>2号路</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>3号路</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>4号路</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>5号路</string>
+      </property>
+     </item>
     </widget>
+    <widget class="QComboBox" name="locationCbx">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>91</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>左端/上端</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>中间</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>右端/底端</string>
+      </property>
+     </item>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="autoModelSwitchBtn">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>290</y>
+      <width>75</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>关闭</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="autoModelLbl">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>290</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>自动导航模式</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="destinationLbl">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(170, 255, 255);
+border-top-left-radius:15px;
+border-top-right-radius:15px;</string>
+    </property>
+    <property name="text">
+     <string>您要去哪儿？！</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="trafficControllLbl">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>9</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(170, 255, 255);
+border-top-left-radius:15px;
+border-top-right-radius:15px;</string>
+    </property>
+    <property name="text">
+     <string>通行控制</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
   </widget>
  </widget>

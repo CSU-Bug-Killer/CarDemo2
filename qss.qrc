@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>qss/widget.qss</file>
+        <file>qss/carcontroll.qss</file>
     </qresource>
 </RCC>

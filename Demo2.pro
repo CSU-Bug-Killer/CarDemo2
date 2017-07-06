@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -18,21 +18,35 @@ SOURCES += main.cpp\
     welcomepage.cpp \
     lightcontrollboard.cpp \
     carcontrollboard.cpp \
-    carmap.cpp
+    carmap.cpp \
+    autonavigation.cpp \
+    navigationcontrollboard.cpp \
+    setting.cpp \
+    about.cpp \
+    connectserver.cpp
 
 HEADERS  += widget.h \
     map.h \
     welcomepage.h \
     lightcontrollboard.h \
     carcontrollboard.h \
-    carmap.h
+    carmap.h \
+    autonavigation.h \
+    navigationcontrollboard.h \
+    setting.h \
+    about.h \
+    connectserver.h
 
 FORMS    += widget.ui \
     welcomepage.ui \
     map.ui \
     lightcontrollboard.ui \
     carcontrollboard.ui \
-    carmap.ui
+    carmap.ui \
+    autonavigation.ui \
+    navigationControllBoard.ui \
+    about.ui \
+    setting.ui
 
 RESOURCES += \
     icons.qrc \

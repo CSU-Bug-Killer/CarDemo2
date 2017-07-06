@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NavigationControllBoard</class>
+ <widget class="QWidget" name="NavigationControllBoard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>223</width>
+    <height>621</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="autoModelSwitchBtn">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>10</y>
+     <width>75</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
+   </property>
+   <property name="text">
+    <string>关闭</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="autoModelLbl">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>自动导航模式</string>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="autoModelGbx">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>201</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-color:black;</string>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QLabel" name="roadChooseLbl">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>61</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>哪条路</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="locationLbl">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>90</y>
+      <width>51</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>哪个位置</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="roadChooseCbx">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>30</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>1号路</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2号路</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3号路</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>4号路</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>5号路</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="locationCbx">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>91</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>左端/上端</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>中间</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>右端/底端</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="destinationLbl">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>201</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(170, 255, 255);
+border-top-left-radius:15px;
+border-top-right-radius:15px;</string>
+   </property>
+   <property name="text">
+    <string>您要去哪儿？！</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

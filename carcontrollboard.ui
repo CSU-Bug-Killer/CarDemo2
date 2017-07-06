@@ -29,23 +29,23 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
+     <y>40</y>
      <width>223</width>
-     <height>300</height>
+     <height>191</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
    <property name="title">
-    <string>CarsAction</string>
+    <string/>
    </property>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="straightBtn">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>70</y>
-      <width>61</width>
+      <x>80</x>
+      <y>60</y>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -57,14 +57,14 @@ border-radius:5px;
 border:solid 2px black;</string>
     </property>
     <property name="text">
-     <string>GO</string>
+     <string>直行</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>30</y>
+      <y>20</y>
       <width>181</width>
       <height>31</height>
      </rect>
@@ -73,12 +73,12 @@ border:solid 2px black;</string>
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="stopBtn">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>70</y>
-      <width>61</width>
+      <x>80</x>
+      <y>100</y>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -89,15 +89,15 @@ color: rgb(255, 255, 255);
 border-radius:5px;</string>
     </property>
     <property name="text">
-     <string>STOP</string>
+     <string>停止</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="leftBtn">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>120</y>
-      <width>61</width>
+      <x>20</x>
+      <y>100</y>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -112,12 +112,12 @@ border:solid 2px black;</string>
      <string>左转</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="rightBtn">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>120</y>
-      <width>61</width>
+      <x>140</x>
+      <y>100</y>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -131,12 +131,12 @@ border-radius:5px;</string>
      <string>右转</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="backBtn">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>170</y>
-      <width>61</width>
+      <x>20</x>
+      <y>60</y>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -148,15 +148,15 @@ border-radius:5px;
 border:solid 2px black;</string>
     </property>
     <property name="text">
-     <string>撤销</string>
+     <string>退格</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="resetBtn">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>170</y>
-      <width>61</width>
+      <x>140</x>
+      <y>60</y>
+      <width>51</width>
       <height>31</height>
      </rect>
     </property>
@@ -170,11 +170,11 @@ border-radius:5px;</string>
      <string>重置</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="sendBtn">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>230</y>
+      <x>30</x>
+      <y>140</y>
       <width>141</width>
       <height>31</height>
      </rect>
@@ -191,7 +191,7 @@ background-color: rgb(0, 0, 0);
 border-radius:5px;</string>
     </property>
     <property name="text">
-     <string>应用</string>
+     <string>发送</string>
     </property>
    </widget>
   </widget>
@@ -199,16 +199,16 @@ border-radius:5px;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>320</y>
+     <y>270</y>
      <width>223</width>
-     <height>81</height>
+     <height>151</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true"/>
    </property>
    <property name="title">
-    <string>LightsStatus</string>
+    <string/>
    </property>
    <widget class="QPushButton" name="pushButton_14">
     <property name="geometry">
@@ -304,122 +304,64 @@ border-radius:5px;</string>
      <string>4号灯</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QGroupBox" name="beeGbx">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>420</y>
-     <width>223</width>
-     <height>81</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="title">
-    <string>Bee</string>
-   </property>
-   <widget class="QPushButton" name="pushButton_16">
+   <widget class="QPushButton" name="beeSwitchBtn">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>230</y>
-      <width>141</width>
+      <x>140</x>
+      <y>90</y>
+      <width>71</width>
       <height>31</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
     <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
+     <string notr="true">background-color: rgb(255, 0, 0);
+color:white;
 border-radius:5px;</string>
     </property>
     <property name="text">
-     <string>Apply</string>
+     <string>关</string>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>40</y>
-      <width>54</width>
-      <height>12</height>
+      <y>90</y>
+      <width>61</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="text">
      <string>蜂鸣器</string>
     </property>
    </widget>
-   <widget class="QGroupBox" name="switchGbx">
-    <property name="geometry">
-     <rect>
-      <x>130</x>
-      <y>30</y>
-      <width>80</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::RightToLeft</enum>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: black;
-color:white;
-border-radius:10px;</string>
-    </property>
-    <property name="title">
-     <string/>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-    <widget class="QPushButton" name="pushButton_10">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>41</width>
-       <height>30</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>微软雅黑</family>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: white;
-background-color: rgb(255, 0, 0);
-border-radius:10px;</string>
-     </property>
-     <property name="text">
-      <string>关</string>
-     </property>
-    </widget>
-   </widget>
   </widget>
   <widget class="QGroupBox" name="locationMsgGbx">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>520</y>
+     <y>460</y>
      <width>223</width>
      <height>91</height>
     </rect>
    </property>
    <property name="title">
-    <string>LocationMessage</string>
+    <string/>
    </property>
-   <widget class="QLabel" name="label_2">
+   <widget class="QLabel" name="xAxisLbl">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>30</y>
+      <y>20</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -428,11 +370,11 @@ border-radius:10px;</string>
      <string>X轴坐标:0.00</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="yAxisLbl">
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>30</y>
+      <y>20</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -441,7 +383,7 @@ border-radius:10px;</string>
      <string>Y轴坐标:0.00</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="roadNumberLbl">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -451,10 +393,10 @@ border-radius:10px;</string>
      </rect>
     </property>
     <property name="text">
-     <string>路口:0.00</string>
+     <string>路号:0.00</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="directionLbl">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -467,6 +409,69 @@ border-radius:10px;</string>
      <string>方向:l-&gt;r</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QLabel" name="actionLbl">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>-1</y>
+     <width>223</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(170, 255, 255);
+border-top-left-radius:15px;
+border-top-right-radius:15px;</string>
+   </property>
+   <property name="text">
+    <string>车辆行为控制</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="componentLbl">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>240</y>
+     <width>221</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(170, 255, 255);
+border-top-left-radius:15px;
+border-top-right-radius:15px;</string>
+   </property>
+   <property name="text">
+    <string>车辆组件控制</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="locationLbl">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>429</y>
+     <width>223</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(170, 255, 255);
+border-top-left-radius:15px;
+border-top-right-radius:15px;</string>
+   </property>
+   <property name="text">
+    <string>车辆位置信息</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
  </widget>
  <resources/>

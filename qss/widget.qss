@@ -1,13 +1,10 @@
 /*左侧菜单选项颜色*/
 QPushButton{
-    height:45px;
-    width:220px;
     background-color:black;
     color:#95a0aa;
     font-weight:blod;
     border:none;
 }
-
 /*
 QPushButton#title:hover{
     background-color:black;
@@ -15,17 +12,17 @@ QPushButton#title:hover{
 *
 
 /*鼠标移上时的颜色变化*/
-QPushButton#welcomeBtn:hover,#mainBtn:hover,#netrafficBtn:hover,#aboutBtn:hover,#helpBtn:hover{
+QPushButton#welcomeBtn:hover,#mainBtn:hover,#carMapBtn:hover,#autoNavigationBtn:hover,#aboutBtn:hover,#settingBtn:hover{
     color:white;
-    /*background-color:#1fb5ad;*/
-    /*红色e7141a */
     background-color:#dd2a30;
 }
 
-/*左侧背景颜色*/
+/*左侧背景颜色
 QGroupBox#groupBox{
     width:241px;
     height:674px;
     /*background-color:#32323a;*/
     background-color:#000;
 }
+*/
+
