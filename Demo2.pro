@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     navigationcontrollboard.cpp \
     setting.cpp \
     about.cpp \
-    communicawidget.cpp
+    communicawidget.cpp \
+    singlemap.cpp
 
 
 HEADERS  += widget.h \
@@ -36,7 +37,8 @@ HEADERS  += widget.h \
     navigationcontrollboard.h \
     setting.h \
     about.h \
-    communicawidget.h
+    communicawidget.h \
+    singlemap.h
 
 FORMS    += widget.ui \
     welcomepage.ui \
@@ -51,7 +53,8 @@ FORMS    += widget.ui \
 
 RESOURCES += \
     icons.qrc \
-    qss.qrc
+    qss.qrc \
+    src.qrc
 
 DISTFILES += \
     widget.qss
