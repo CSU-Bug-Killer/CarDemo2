@@ -28,23 +28,23 @@ Setting::Setting(QWidget *parent) :
 Setting::~Setting(){
     delete ui;
 }
-QHostAddress Setting::getHostAddr()
+QString Setting::getHostAddr()
 {
     if(ui->hostAddrLdt->text()!=""){
-        return QHostAddress(ui->hostAddrLdt->text());
+        return ui->hostAddrLdt->text();
     }else{
         qDebug()<<"主机地址不能为空";
-        return QHostAddress("127.0.0.1");
+        return "127.0.0.1";
     }
 }
 
-qint16 Setting::getHostPort()
+QString Setting::getHostPort()
 {
     if(ui->hostPortLdt->text()!=""){
-         return ui->hostPortLdt->text().toInt();
+         return ui->hostPortLdt->text();
     }else{
         qDebug()<<"主机端口不能为空";
-        return qint16(9527);
+        return tr("%1").arg(9527);
     }
 
 }
@@ -57,11 +57,10 @@ void Setting::onButtonBoxAccepted()
     }else if(ui->hostPortLdt->text()==""){
         qDebug()<<"主机端口不能为空";
     }else{
-//        this->settingHost->setHost(QHostAddress(ui->hostAddrLdt->text()));
-//        this->settingHost->setPort(ui->hostPortLdt->text().toInt());
         QString host = ui->hostAddrLdt->text();
         QString port = ui->hostPortLdt->text();
         singleConnect->connectServer(host,port);
+        connOk();
         qDebug()<<"setHostInfoSetting";
         this->close();
    }
@@ -70,4 +69,10 @@ void Setting::onButtonBoxAccepted()
 void Setting::onButtonBoxRejected()
 {
     this->close();
+}
+
+bool connOk()
+{
+    qDebug()<<"connOk()";
+    return true;
 }

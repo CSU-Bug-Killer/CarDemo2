@@ -18,9 +18,12 @@ public:
     explicit Setting(QWidget *parent = 0);
     ~Setting();
 
-    QHostAddress    getHostAddr(void);
-    qint16          getHostPort(void);
+    QString getHostAddr(void);
+    QString getHostPort(void);
 
+
+signals:
+    bool connOk();
 
 private slots:
     void onButtonBoxAccepted();

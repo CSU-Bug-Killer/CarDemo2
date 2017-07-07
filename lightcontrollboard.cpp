@@ -16,7 +16,6 @@ LightControllBoard::LightControllBoard(QWidget *parent) :
             this,SLOT(setRoadLights()));
 
 
-
     singleConnect = CommunicaWidget::getInstance();
 
 }

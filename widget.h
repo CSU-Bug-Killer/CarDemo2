@@ -12,6 +12,7 @@
 #include "navigationcontrollboard.h"
 #include "setting.h"
 #include "about.h"
+#include "communicawidget.h"
 
 //#include "connectserver.h"
 
@@ -47,8 +48,14 @@ private slots:
 
     void onConnectBtnClicked();
 
+    //更新服务器连接状态
+    void updateConnectStatus();
+
 private:
     Ui::Widget *ui;
+
+    //服务器连接
+    CommunicaWidget* conServer;
 
     /*中央显示面板*/
     //欢迎界面
@@ -73,6 +80,7 @@ private:
     NavigationControllBoard* navigationBoard;
 
     Setting* settingDialog;
+
 
 //    ConnectServer* socket;
 //    About* aboutDialog;

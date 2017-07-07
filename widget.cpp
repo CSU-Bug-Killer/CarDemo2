@@ -64,8 +64,18 @@ Widget::Widget(QWidget *parent) :
 
 //    connect(settingDialog,SIGNAL(accepted()),
 //            this,SLOT(setHostInfo()));
+    conServer = CommunicaWidget::getInstance();
+
     connect(ui->connectBtn,SIGNAL(clicked(bool)),
             this,SLOT(onConnectBtnClicked()));
+
+    connect(settingDialog,SIGNAL(connOk()),
+            this,SLOT(updateConnectStatus()));
+
+
+//    connect(conServer,SIGNAL(c),
+//            this,SLOT(updateConnectStatus()));
+
 
     //设置端口和主机地址
 
@@ -215,33 +225,30 @@ void Widget::onSettingBtnClicked()
     ui->settingBtn->setStyleSheet(setOnlyColor);
 
     settingDialog->exec();
-//    updateQss();
 }
-
-//void Widget::setHostInfo()
-//{
-//    this->socket->setHost(settingDialog->getHostAddr());
-//    this->socket->setPort(settingDialog->getHostPort());
-//    qDebug()<<"setHostInfo";
-//    this->close();
-//}
-
-
-
 
 void Widget::onConnectBtnClicked()
 {
-//    if(socket->isValid()){
-//        socket->stopRead();
-//        ui->connectBtn->setStyleSheet("background-color:black;color:white;");
+//    qDebug()<<tr("1%").arg(conServer->isConnectValid());
+    if(ui->connectBtn->text()=="已连接"){
+        ui->connectBtn->setStyleSheet("background-color:black;color:white;");
+        qDebug()<<"lyy:disconnect";
+        ui->connectBtn->setText("已断开");
 
-//        updateTimer.stop();
-//        ui->connectBtn->setText("已断开");
-
-//    } else {
-//        socket->startRead();
-//        ui->connectBtn->setText("已连接");
-//        ui->connectBtn->setStyleSheet("background-color:green;color:white;");
-//        updateTimer.start(50);
-//    }
+    } else {
+//        qDebug()<<tr("1%").arg(conServer->isConnectValid());
+        conServer->connectServer(settingDialog->getHostAddr(),settingDialog->getHostPort());
+        ui->connectBtn->setText("已连接");
+        ui->connectBtn->setStyleSheet("background-color:green;color:white;");
+        qDebug()<<"lyy:connect";
+    }
 }
+
+void Widget::updateConnectStatus()
+{
+    qDebug()<<"设置之后连接";
+    ui->connectBtn->setText("已连接");
+    ui->connectBtn->setStyleSheet("background-color:green;color:white;");
+}
+
+
