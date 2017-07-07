@@ -2,6 +2,7 @@
 #define MAP_H
 
 #include <QWidget>
+#include "singlemap.h"
 
 namespace Ui {
 class Map;
@@ -14,12 +15,13 @@ public:
     explicit Map(QWidget *parent = 0);
     ~Map();
 
-signals:
-
+protected:
+    void    paintEvent(QPaintEvent *);
 public slots:
 
 private:
     Ui::Map* ui;
+    singleMap*  map;
 };
 
 #endif // MAP_H

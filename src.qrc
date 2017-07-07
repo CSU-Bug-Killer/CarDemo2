@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/car.png</file>
+        <file>image/map.png</file>
+        <file>resource/cardInfoShort.txt</file>
+    </qresource>
+</RCC>
