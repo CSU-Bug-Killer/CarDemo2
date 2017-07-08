@@ -23,27 +23,31 @@ public:
 
     void sendMesg(QString msg);
     void connectServer(QString host,QString port);
+    void disconnectServer();
     void controlDirection(QString car,QString control);
     void controlLight(QString car,QString headLeft,QString headRight,QString roofLigntRed,QString roofLightBlue);
     void controlSpeakers(QString car,QString control);
-    void controlRoadLight(QString roadLight,QString control);
+    void controlRoadLight(QString roadLight1,QString control1,QString roadLight2,QString control2);
+    void controlAutoNav(QString car,QString target);
+//    QTcpSocket getTcpSocket();
+//    QTcpSocket *m_tcpSocket;
 private:
     CommunicaWidget(QWidget *parent = 0);
     Ui::CommunicaWidget *ui;
     QTcpSocket *m_tcpSocket;
 
-
-
-
-
 signals:
 //    void sendMesg(QString);
     void signalReadMesg(QString);
+    void disConToServer();
+    void conToServer();
 
 public slots:
 //    void connectServer();
 //    void sendMesg();
     void readMesg();
+    void getDisConnectSignal();
+    void getConnectedSignal();
 
 
 
