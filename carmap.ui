@@ -6,9 +6,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>758</width>
-    <height>621</height>
+    <width>700</width>
+    <height>700</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>700</width>
+    <height>700</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Form</string>
@@ -18,12 +30,12 @@
     <rect>
      <x>50</x>
      <y>90</y>
-     <width>54</width>
-     <height>12</height>
+     <width>91</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
-    <string>车辆管控</string>
+    <string/>
    </property>
   </widget>
  </widget>

@@ -12,12 +12,12 @@ class FlowCount : public QWidget
     Q_OBJECT
 public:
     explicit FlowCount(QWidget *parent = 0);
-
+    ~FlowCount();
 signals:
 
 public slots:
 
-    void onReadMessageSave();
+    void onReadMessageSave(QString msg);
 private:
     Ui::FlowCount* ui;
 
