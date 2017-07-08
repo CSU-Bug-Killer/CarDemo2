@@ -11,9 +11,6 @@ CommunicaWidget::CommunicaWidget(QWidget *parent) :
     QWidget(parent)
 {
 
-//    qDebug() << "connect";
-//    this->controlDirection();
-
 }
 
 void CommunicaWidget::connectServer(QString host,QString port)
@@ -23,17 +20,37 @@ void CommunicaWidget::connectServer(QString host,QString port)
     m_tcpSocket->abort();
     m_tcpSocket->connectToHost(host,port.toInt());
     connect(m_tcpSocket,SIGNAL(readyRead()),this,SLOT(readMesg()));
+
+    connect(m_tcpSocket,SIGNAL(disconnected()),
+            this,SLOT(getDisConnectSignal()));
+    connect(m_tcpSocket,SIGNAL(connected()),
+            this,SLOT(getConnectedSignal()));
+}
+
+void CommunicaWidget::getDisConnectSignal(){
+    emit disConToServer();
+    qDebug()<<"signals:discontoserver()";
+}
+void CommunicaWidget::getConnectedSignal(){
+    emit conToServer();
+    qDebug()<<"signals:contoserver()";
+}
+
+void CommunicaWidget::disconnectServer()
+{
+    m_tcpSocket->disconnectFromHost();
+    m_tcpSocket->close();
+//
 }
 
 void CommunicaWidget::readMesg() //读取信息
 {
     QByteArray qba = m_tcpSocket->readAll();
-//    ui->textEdit_recmesg->clear();
     qDebug()<<qba;
     QString ss=QVariant(qba).toString();
-//    ui->textEdit_recmesg->setText(ss);
     emit signalReadMesg(ss);
 }
+
 void CommunicaWidget::sendMesg(QString msg) //发送信息
 {
     qDebug() << "sendMesg()";
@@ -93,18 +110,37 @@ void CommunicaWidget::controlSpeakers(QString car,QString control)
     this->sendMesg(json);
 }
 
-void CommunicaWidget::controlRoadLight(QString roadLight,QString control)
+void CommunicaWidget::controlRoadLight(QString roadLight1,QString control1,QString roadLight2,QString control2)
 {
     QString json("{"
                  "\"message\":\"路灯控制\","
                  "\"data\":{"
                  "\"sendType\":\"roadLight\","
                  "\"sendData\":{"
-                 "\"device\":\""+roadLight+"\","
-                 "\"control\":\""+control+"\""
+                 "\"device1\":\""+roadLight1+"\","
+                 "\"control\":\""+control1+"\","
+                 "\"device2\":\""+roadLight2+"\","
+                 "\"control2\":\""+control2+"\""
                  "}"
                  "}"
                  "}"
                 );
     this->sendMesg(json);
 }
+void CommunicaWidget::controlAutoNav(QString car, QString target)
+{
+    QString json("{"
+                 "\"message\":\"自动导航\","
+                 "\"data\":{"
+                 "\"sendType\":\"autoNav\","
+                 "\"sendData\":{"
+                 "\"device\":\""+car+"\","
+                 "\"target\":\""+target+"\""
+                 "}"
+                 "}"
+                 "}"
+                 );
+    this->sendMesg(json);
+}
+
+

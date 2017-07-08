@@ -33,6 +33,7 @@ public slots:
 
 //    void    setHostInfo(void);
 
+
 private slots:
     void onMainBtnClicked();
 
@@ -50,6 +51,7 @@ private slots:
 
     //更新服务器连接状态
     void updateConnectStatus();
+    void updateDisconnect();
 
 private:
     Ui::Widget *ui;

@@ -23,7 +23,7 @@ public:
 
 
 signals:
-    bool connOk();
+//    void connOk();
 
 private slots:
     void onButtonBoxAccepted();

@@ -2,6 +2,7 @@
 #define NAVIGATIONCONTROLLBOARD_H
 
 #include <QWidget>
+#include "communicawidget.h"
 
 namespace Ui {
 class NavigationControllBoard;
@@ -18,9 +19,12 @@ public slots:
 
 private slots:
     void AutoModelSwitchBtnClicked();
+    void NavigateStartBtnClicked();
 
 private:
     Ui::NavigationControllBoard* ui;
+    CommunicaWidget* singleConnect;
+    QString carNum="car1";
     bool isAutoModelOn = false;
 };
 

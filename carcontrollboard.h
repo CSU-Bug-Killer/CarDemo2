@@ -2,6 +2,7 @@
 #define CARCONTROLLBOARD_H
 
 #include <QWidget>
+#include "communicawidget.h"
 
 namespace Ui {
 class CarControllBoard;
@@ -20,16 +21,23 @@ private slots:
 
     void switchChangeState();
 
-    void on_straightBtn_clicked();
-    void on_leftBtn_clicked();
-    void on_rightBtn_clicked();
-    void on_stopBtn_clicked();
-    void on_backBtn_clicked();
-    void on_resetBtn_clicked();
+    void onStraightBtnClicked();
+    void onLeftBtnClicked();
+    void onRightBtnClicked();
+    void onStopBtnClicked();
+    void onBackBtnClicked();
+    void onResetBtnClicked();
+
+    void onActionControlBtnClicked();
+    void onCarLightSetBtnClicked();
+
+    void showCarPosition();
+
 
 private:
     Ui::CarControllBoard* ui;
-
+    CommunicaWidget* singleConnect;
+    QString carNum="car1";
     bool isOpen=false;
 };
 

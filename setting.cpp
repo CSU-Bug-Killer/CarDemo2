@@ -20,8 +20,6 @@ Setting::Setting(QWidget *parent) :
 
     connect(ui->buttonBox,SIGNAL(rejected()),
             this,SLOT(onButtonBoxRejected()));
-
-//    settingHost = new ConnectServer;
     singleConnect = CommunicaWidget::getInstance();
 }
 
@@ -60,7 +58,6 @@ void Setting::onButtonBoxAccepted()
         QString host = ui->hostAddrLdt->text();
         QString port = ui->hostPortLdt->text();
         singleConnect->connectServer(host,port);
-        connOk();
         qDebug()<<"setHostInfoSetting";
         this->close();
    }
@@ -71,8 +68,6 @@ void Setting::onButtonBoxRejected()
     this->close();
 }
 
-bool connOk()
-{
-    qDebug()<<"connOk()";
-    return true;
-}
+
+
+
