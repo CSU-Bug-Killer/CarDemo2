@@ -4,16 +4,32 @@
 #include <QJsonDocument>
 #include <QPainter>
 #include "singlemap.h"
-
+#include <QVariantMap>
+#include "communicawidget.h"
 #include <QDebug>
 
 CarMap::CarMap(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::CarMap)
 {
+
     ui->setupUi(this);
     map = singleMap::getInstance();
     singleConnect = CommunicaWidget :: getInstance();
+    point = QPoint(200, 200);
+    connect(singleConnect,SIGNAL(signalReadMesg(QString)),
+            this,SLOT(parseMsg(QString)));
+    connect(this,SIGNAL(carMapUpdate(QString)),
+            this,SLOT(updateCarmap(QString)));
+}
+
+void CarMap::updateCarmap(QString position){
+
+    point = map->getMapHashSet()->value(position.toLongLong());
+   qDebug() << point;
+   qDebug() << position;
+  qDebug() <<map->getMapHashSet()->value(position.toLongLong());
+//     this->update();
 }
 
 CarMap::~CarMap()
@@ -25,12 +41,15 @@ void CarMap::paintEvent(QPaintEvent *)
 {
     QPainter        painter(this);
     // QPoint          point(0, 0);
-    QPoint          point(200, 200);
+  //  QPoint          point(200, 200);
     QPoint          p0(0, 0);
     //car
     QPen            pen;
     QRect           rect;
     QPixmap         carPixmap;
+   // resize(700,700);
+    timer.start(1000);
+    connect(&timer,SIGNAL(timeout()),this,SLOT(update()));
 
     painter.setRenderHints(QPainter::Antialiasing);
     painter.drawPixmap(0, 0, width(), height(), map->getBackground());
@@ -38,14 +57,20 @@ void CarMap::paintEvent(QPaintEvent *)
 
     carPixmap.load(":/image/car.png");
 
+        pen.setWidth(20);
+       pen.setCapStyle(Qt::RoundCap);
+       painter.setPen(pen);
+       painter.drawPoint(0,0);
+       painter.drawPoint(150,120);
+
 
     //获取小车当前坐标
-  //  point = map->getMapHashSet()->value(info->getPosition());
+   //point = map->getMapHashSet()->value(info->getPosition());
 
-    rect.setWidth(36);
-    rect.setHeight(36);
-    rect.moveCenter(point);
-    painter.drawPixmap(rect, carPixmap);
+
+  //  rect.moveCenter(point);
+
+    painter.drawPixmap(point.x(),point.y(),40,20, carPixmap);
 
 
 }
@@ -55,18 +80,19 @@ void CarMap::parseMsg(QString msg)
     /*
         * msg = "{"
         */
-       qDebug() << "di";
-           QString json("{"
-                        "\"message\":\"小车位置\","
-                        "\"data\":{"
-                        "\"returnType\":\"carPosition\","
-                        "\"returnData\":{"
-                        "\"device\":\"car1\","
-                        "\"position\":\"36\""
-                        "}"
-                        "}"
-                        "}"
-                       );
+    qDebug() << "sendSlot";
+//           QString json("{"
+//                        "\"message\":\"小车位置\","
+//                        "\"data\":{"
+//                        "\"returnType\":\"carPosition\","
+//                        "\"returnData\":{"
+//                        "\"device\":\"car1\","
+//                        "\"position\":\"36\""
+//                        "}"
+//                        "}"
+//                        "}"
+//                       );
+    QString json = msg;
 
            QJsonParseError error;
            QJsonDocument jsonDocument = QJsonDocument::fromJson(json.toUtf8(),&error);
@@ -84,17 +110,22 @@ void CarMap::parseMsg(QString msg)
                    qDebug() << "returnType:" << data["returnType"];
 
                    if("carPosition"==data["returnType"]){
+                       QVariantMap returnData = data["returnData"].toMap();
+
+                       qDebug() << returnData["position"].toString();
+
+                       emit carMapUpdate(returnData["position"].toString());
 
                    }
                    if("roadLights" == data["roadLights"]){
 
                    }
 
-                   QVariantMap returnData = data["returnData"].toMap();
-                   qDebug() << "device:" << returnData["device"].toString();
-                   qDebug() << "position:" << returnData["position"];
+//                   QVariantMap returnData = data["returnData"].toMap();
+               //    qDebug() << "device:" << returnData["device"].toString();
+//                   qDebug() << "position:" << returnData["position"];
 
-       //            qDebug() << "length:" << nestedMap["length"].toInt();
+       //            qDebug() << "length]]:" << nestedMap["length"].toInt();
        //            qDebug() << "use_space:" << nestedMap["use_space"].toBool();
                }
            }else{

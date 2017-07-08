@@ -26,13 +26,14 @@ void Map::paintEvent(QPaintEvent *)
     QPen            pen;
     QRect           rect;
     QPixmap         carPixmap;
-
+    resize(700,700);
     painter.setRenderHints(QPainter::Antialiasing);
     painter.drawPixmap(0, 0, width(), height(), map->getBackground());
     painter.scale(width()/1000.0, height()/1000.0);
 
     carPixmap.load(":/image/car.png");
 
+    map->createHashSet();
 
     //获取小车当前坐标
   //  point = map->getMapHashSet()->value(info->getPosition());

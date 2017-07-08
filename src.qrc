@@ -3,5 +3,6 @@
         <file>image/car.png</file>
         <file>image/map.png</file>
         <file>resource/cardInfoShort.txt</file>
+        <file>resource/cardNumber.txt</file>
     </qresource>
 </RCC>

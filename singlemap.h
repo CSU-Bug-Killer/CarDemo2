@@ -36,7 +36,7 @@ public:
 
 private:
     QPixmap                     mapBackground;
-    QHash<qlonglong, QPoint>    mapHashSet;
+    QHash<qlonglong, QPoint>      mapHashSet;
     QLine                       mapRoads[23];
     int                         scale;
 

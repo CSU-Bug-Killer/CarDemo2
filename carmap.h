@@ -1,6 +1,6 @@
 #ifndef CARMAP_H
 #define CARMAP_H
-
+#include <QTimer>
 #include <QWidget>
 #include "communicawidget.h"
 #include "singlemap.h"
@@ -18,13 +18,16 @@ protected:
     void    paintEvent(QPaintEvent *);
 public slots:
     void parseMsg(QString msg);
-
+    void updateCarmap(QString position);
 
 private:
     Ui::CarMap* ui;
-
+    QPoint  point;
+QTimer timer;
     CommunicaWidget* singleConnect ;
     singleMap*  map;
+signals:
+    void carMapUpdate(QString);
 };
 
 #endif // CARMAP_H
