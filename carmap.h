@@ -23,7 +23,7 @@ public slots:
 private:
     Ui::CarMap* ui;
     QPoint  point;
-QTimer timer;
+    QTimer timer;
     CommunicaWidget* singleConnect ;
     singleMap*  map;
 signals:

@@ -2,6 +2,9 @@
 #define AUTONAVIGATION_H
 
 #include <QWidget>
+#include <QTimer>
+#include "communicawidget.h"
+#include "singlemap.h"
 
 namespace Ui {
 class AutoNavigation;
@@ -12,12 +15,20 @@ class AutoNavigation : public QWidget
 public:
     explicit AutoNavigation(QWidget *parent = 0);
     ~AutoNavigation();
-signals:
-
+protected:
+    void    paintEvent(QPaintEvent *);
 public slots:
+    void parseMsg(QString msg);
+    void updateAutomap(QString position);
 
 private:
     Ui::AutoNavigation* ui;
+    QTimer timer;
+    CommunicaWidget* singleConnect ;
+    singleMap*  map;
+  //  QPoint  point2;
+signals:
+ //   void autoMapUpdate(QString);
 };
 
 #endif // AUTONAVIGATION_H

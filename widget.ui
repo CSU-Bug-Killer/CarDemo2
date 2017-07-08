@@ -432,18 +432,6 @@
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
          <widget class="QStackedWidget" name="mapBoardSkd">
-          <property name="minimumSize">
-           <size>
-            <width>700</width>
-            <height>700</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>700</width>
-            <height>700</height>
-           </size>
-          </property>
           <property name="currentIndex">
            <number>-1</number>
           </property>
