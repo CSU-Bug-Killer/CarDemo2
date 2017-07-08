@@ -24,8 +24,12 @@ private slots:
 private:
     Ui::NavigationControllBoard* ui;
     CommunicaWidget* singleConnect;
+    QString target="";
     QString carNum="car1";
     bool isAutoModelOn = false;
+
+    void getALocation();
+    void getAALocation();
 };
 
 #endif // NAVIGATIONCONTROLLBOARD_H
