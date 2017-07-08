@@ -138,10 +138,5 @@ void LightControllBoard::setTrafficLights()
     singleConnect->controlRoadLight("roadlight1",light1Status,"roadlight2",light2Status);
 }
 
-//自动导航设置
-//void LightControllBoard::setAtuoNavigation()
-//{
-
-//}
 
 

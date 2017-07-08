@@ -23,10 +23,6 @@ public slots:
     void setRoadLights();
     void setRoadModel();
     void setTrafficLights();
-//    void setAtuoNavigation();
-
-//    void redOneChecked();
-//    void greenOneChecked();
     void onCurrentIndexChanged();
 
 private:
