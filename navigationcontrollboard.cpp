@@ -10,6 +10,10 @@ NavigationControllBoard::NavigationControllBoard(QWidget *parent) :
     ui->destinationLbl->hide();
     ui->autoModelGbx->hide();
 
+    //初始化下拉框路号选项
+    for(int i=1;i<25;i++){
+        ui->roadChooseCbx->addItem(tr("%1").arg(i)+"号路");
+    }
 
     singleConnect = CommunicaWidget::getInstance();
 
@@ -24,6 +28,7 @@ NavigationControllBoard::NavigationControllBoard(QWidget *parent) :
 NavigationControllBoard::~NavigationControllBoard()
 {
     delete ui;
+
 }
 
 

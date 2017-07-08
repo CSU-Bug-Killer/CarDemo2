@@ -95,36 +95,6 @@
       <height>31</height>
      </rect>
     </property>
-    <item>
-     <property name="text">
-      <string>1号路</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>2号路</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>3号路</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>4号路</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>5号路</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>6</string>
-     </property>
-    </item>
    </widget>
    <widget class="QComboBox" name="locationCbx">
     <property name="geometry">

@@ -10,8 +10,6 @@ LightControllBoard::LightControllBoard(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->destinationLbl->hide();
-    ui->autoModelGbx->hide();
     ui->roadCmb->setEnabled(false);
 
 
