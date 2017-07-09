@@ -7,6 +7,9 @@
 #include <QVariantMap>
 #include "communicawidget.h"
 #include <QDebug>
+#include <QtMath>
+#include <QPen>
+#include <QColor>
 
 CarMap::CarMap(QWidget *parent) :
     QWidget(parent),
@@ -16,11 +19,13 @@ CarMap::CarMap(QWidget *parent) :
     ui->setupUi(this);
     map = singleMap::getInstance();
     singleConnect = CommunicaWidget :: getInstance();
-    point = QPoint(200, 200);
+    point = QPoint(200.0, 200.0);
     connect(singleConnect,SIGNAL(signalReadMesg(QString)),
             this,SLOT(parseMsg(QString)));
     connect(this,SIGNAL(carMapUpdate(QString)),
             this,SLOT(updateCarmap(QString)));
+//    qDebug()<<"height~~~~~~~~~~~~~~~~~~~~~";
+//    qDebug()<<this->height();
 }
 
 void CarMap::updateCarmap(QString position){
@@ -28,8 +33,7 @@ void CarMap::updateCarmap(QString position){
     point = map->getMapHashSet()->value(position.toLongLong());
  // qDebug() << point;
   // qDebug() << position;
-//  qDebug() <<map->getMapHashSet()->value(position.toLongLong());
-//     this->update();
+
 }
 
 CarMap::~CarMap()
@@ -40,29 +44,29 @@ CarMap::~CarMap()
 void CarMap::paintEvent(QPaintEvent *)
 {
     QPainter        painter(this);
-    // QPoint          point(0, 0);
-  //  QPoint          point(200, 200);
     QPoint          p0(0, 0);
-    QPen            pen;
     QRect           rect;
     QPixmap         carPixmap;
+    QPen            pen;
+
 
     timer.start(1000);
     connect(&timer,SIGNAL(timeout()),this,SLOT(update()));
-    painter.scale(width()/1000.0, height()/1000.0);
 
-    painter.setRenderHints(QPainter::Antialiasing);
+    qint32 side=qMin(width(),height());
 
-    painter.drawPixmap(0, 0,width(),height(), map->getBackground());
-    qDebug()<<"width";
-    qDebug()<<width();
-    qDebug()<<"height";
-    qDebug()<<height();
+    painter.scale(side/700.0,side/700.0); // $$缩放
+
+    painter.setRenderHints(QPainter::Antialiasing |QPainter::SmoothPixmapTransform);
 
     carPixmap.load(":/image/car.png");
     rect.setWidth(31);
     rect.setHeight(15);
-    rect.moveCenter(point);
+
+    QPoint m(point.x(),point.y());
+    rect.moveCenter(m);
+
+    painter.drawPixmap(0, 0,700.0,700.0, map->getBackground());
     painter.drawPixmap(rect, carPixmap);
 
 }

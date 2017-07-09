@@ -8,6 +8,7 @@
 #include "communicawidget.h"
 #include <QDebug>
 #include <QColor>
+#include <QtMath>
 
 Map::Map(QWidget *parent) :
     QWidget(parent),
@@ -45,7 +46,9 @@ void Map::paintEvent(QPaintEvent *)
     timer.start(1000);
     connect(&timer,SIGNAL(timeout()),this,SLOT(update()));
 
-//  painter.scale(width()/1000.0, height()/1000.0);
+    qint32 side=qMin(width(),height());
+    painter.scale(side/700.0,side/700.0);
+
     painter.setRenderHints(QPainter::Antialiasing);//抗锯齿
     painter.drawPixmap(0, 0, 700, 700, map->getBackground());//画地图
 

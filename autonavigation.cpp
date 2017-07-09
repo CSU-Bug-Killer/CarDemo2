@@ -8,7 +8,7 @@
 #include "communicawidget.h"
 #include <QDebug>
 #include "carmap.h"
-
+#include <QtMath>
 AutoNavigation::AutoNavigation(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::AutoNavigation)
@@ -42,15 +42,21 @@ void AutoNavigation::paintEvent(QPaintEvent *)
 
     timer.start(1000);
     connect(&timer,SIGNAL(timeout()),this,SLOT(update()));
-   // painter.scale(width()/1000.0, height()/1000.0);
+
+    qint32 side=qMin(width(),height());
+    painter.scale(side/700.0,side/700.0);
+
     painter.setRenderHints(QPainter::Antialiasing);
 
     painter.drawPixmap(0, 0, 700,700, map->getBackground());
 
+    QPoint m(point2.x(),point2.y());
+    rect.moveCenter(m);
+
     carPixmap.load(":/image/car.png");
     rect.setWidth(31);
     rect.setHeight(15);
-    rect.moveCenter(point2);
+
     painter.drawPixmap(rect, carPixmap);
 
 }
