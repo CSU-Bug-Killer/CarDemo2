@@ -83,7 +83,7 @@ void CarControllBoard::onCarLightSetBtnClicked()
     QString headRight = ui->rightCbx->isChecked()?"1":"0";
     QString roofLeftRed = ui->roofRedCbx->isChecked()?"1":"0";
     QString roofRightBlue = ui->roofBlueCbx->isChecked()?"1":"0";
-    singleConnect->controlLight(carNum,headLeft,headRight,roofLeftRed,roofRightBlue);
+    singleConnect->controlLight(carNum,roofRightBlue,roofLeftRed,headRight,headLeft);
 
 }
 
@@ -105,9 +105,9 @@ void CarControllBoard::switchChangeState()
 
 void CarControllBoard::onStraightBtnClicked()
 {
-    QString ins="Z";
+    QString ins="H";
     if(ui->lineEdit->text()==""){
-        ui->lineEdit->setText(tr("G")+ins);
+        ui->lineEdit->setText(tr("D")+ins);
     }else{
         ui->lineEdit->setText(ui->lineEdit->text()+ins);
     }

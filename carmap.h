@@ -12,6 +12,7 @@ class CarMap : public QWidget
 {
     Q_OBJECT
 public:
+    QPoint  point;
     explicit CarMap(QWidget *parent = 0);
     ~CarMap();
 protected:
@@ -22,7 +23,7 @@ public slots:
 
 private:
     Ui::CarMap* ui;
-    QPoint  point;
+
     QTimer timer;
     CommunicaWidget* singleConnect ;
     singleMap*  map;

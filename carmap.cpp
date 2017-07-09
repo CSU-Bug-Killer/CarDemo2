@@ -49,14 +49,15 @@ void CarMap::paintEvent(QPaintEvent *)
 
     timer.start(1000);
     connect(&timer,SIGNAL(timeout()),this,SLOT(update()));
-   // painter.scale(width()/1000.0, height()/1000.0);
+    painter.scale(width()/1000.0, height()/1000.0);
+
     painter.setRenderHints(QPainter::Antialiasing);
 
-    painter.drawPixmap(0, 0, 700,700, map->getBackground());
-//    qDebug()<<"width";
-//    qDebug()<<this->width();
-//    qDebug()<<"height";
-//    qDebug()<<this->height();
+    painter.drawPixmap(0, 0,width(),height(), map->getBackground());
+    qDebug()<<"width";
+    qDebug()<<width();
+    qDebug()<<"height";
+    qDebug()<<height();
 
     carPixmap.load(":/image/car.png");
     rect.setWidth(31);
@@ -71,7 +72,7 @@ void CarMap::parseMsg(QString msg)
     /*
         * msg = "{"
         */
-    //    qDebug() << "sendSlot";
+       qDebug() << "sendSlot";
     //           QString json("{"
     //                        "\"message\":\"小车位置\","
     //                        "\"data\":{"
@@ -103,7 +104,7 @@ void CarMap::parseMsg(QString msg)
             if("carPosition"==data["returnType"]){
                 QVariantMap returnData = data["returnData"].toMap();
 
-                 qDebug() << returnData["position"].toString();
+                 qDebug() << returnData["position"].toString() << "lllllllllll";
 
                 emit carMapUpdate(returnData["position"].toString());
 

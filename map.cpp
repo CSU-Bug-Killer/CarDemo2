@@ -164,6 +164,7 @@ void Map::parseMsg(QString msg)
 //                        "}"
 //                        "}"
 //                       );
+    qDebug()<<"$$$$$$$$$$$qqqqqqq";
     QString json = msg;
 
            QJsonParseError error;
@@ -192,7 +193,7 @@ void Map::parseMsg(QString msg)
                   qDebug()<< data["returnType"].toString();
                    if("roadLights" == data["returnType"]){
                        QVariantMap returnData = data["returnData"].toMap();
-                  //      qDebug()<<returnData;
+                        qDebug()<<"$$$$$$$$$$$";
 
                     //   qDebug() << returnData["status1"].toString();
 //                       qDebug() << returnData["status2"].toString();
