@@ -41,10 +41,12 @@ Widget::Widget(QWidget *parent) :
     ui->controlBoardSkd->addWidget(lightcontrollBoard);
     this->navigationBoard = new NavigationControllBoard;
     ui->controlBoardSkd->addWidget(navigationBoard);
+    this->flowcontrolBoard = new FlowControlBoard;
+    ui->controlBoardSkd->addWidget(flowcontrolBoard);
 
 
     //初始化页面菜单导航栏样式
-    ui->welcomeBtn->setStyleSheet("QPushButton#welcomeBtn{background-color:red; color:white}");
+    ui->welcomeBtn->setStyleSheet("background-color:#669933; color:white");
     ui->mapBoardSkd->setCurrentWidget(this->welWidget);
 
     //连接菜单导航点击切换界面槽函数
@@ -102,20 +104,23 @@ void Widget::updateQss(){
 void Widget::onFlowCountBtnClicked()
 {
     ui->mapBoardSkd->setCurrentWidget(this->flowCount);
-//    if(ui->connectBtn->text()=="已断开"){
-        ui->controlBoardSkd->hide();
-//        }
+    ui->controlBoardSkd->setCurrentWidget(flowcontrolBoard);
+    if(ui->connectBtn->text()=="已连接"){
+        ui->controlBoardSkd->show();
+        }
 
-    QString setColor="background-color:black;color:#95a0aa";
-    QString setOnlyColor="background-color:red;color:white";
-    ui->mainBtn->setStyleSheet(setColor);
-    ui->carMapBtn->setStyleSheet(setColor);
-    ui->autoNavigationBtn->setStyleSheet(setColor);
-    ui->aboutBtn->setStyleSheet(setColor);
-    ui->settingBtn->setStyleSheet(setColor);
-    ui->welcomeBtn->setStyleSheet(setColor);
 
-    ui->flowCountBtn->setStyleSheet(setOnlyColor);
+        //样式控制
+//    QString setColor="background-color:black;color:#95a0aa";
+//    QString setOnlyColor="background-color:red;color:white";
+//    ui->mainBtn->setStyleSheet(setColor);
+//    ui->carMapBtn->setStyleSheet(setColor);
+//    ui->autoNavigationBtn->setStyleSheet(setColor);
+//    ui->aboutBtn->setStyleSheet(setColor);
+//    ui->settingBtn->setStyleSheet(setColor);
+//    ui->welcomeBtn->setStyleSheet(setColor);
+
+//    ui->flowCountBtn->setStyleSheet(setOnlyColor);
 }
 
 //切换菜单导航主页面显示欢迎页面
@@ -123,16 +128,17 @@ void Widget::onWelcomeBtnClicked()
 {
     ui->mapBoardSkd->setCurrentWidget(this->welWidget);
     ui->controlBoardSkd->hide();
-    QString setColor="background-color:black;color:#95a0aa";
-    QString setOnlyColor="background-color:red;color:white";
-    ui->mainBtn->setStyleSheet(setColor);
-    ui->carMapBtn->setStyleSheet(setColor);
-    ui->autoNavigationBtn->setStyleSheet(setColor);
-    ui->flowCountBtn->setStyleSheet(setColor);
-    ui->aboutBtn->setStyleSheet(setColor);
-    ui->settingBtn->setStyleSheet(setColor);
 
-    ui->welcomeBtn->setStyleSheet(setOnlyColor);
+//    QString setColor="background-color:black;color:#95a0aa";
+//    QString setOnlyColor="background-color:red;color:white";
+//    ui->mainBtn->setStyleSheet(setColor);
+//    ui->carMapBtn->setStyleSheet(setColor);
+//    ui->autoNavigationBtn->setStyleSheet(setColor);
+//    ui->flowCountBtn->setStyleSheet(setColor);
+//    ui->aboutBtn->setStyleSheet(setColor);
+//    ui->settingBtn->setStyleSheet(setColor);
+
+//    ui->welcomeBtn->setStyleSheet(setOnlyColor);
 
 
 }
@@ -149,16 +155,16 @@ void Widget::onMainBtnClicked()
     ui->controlBoardSkd->setCurrentWidget(this->lightcontrollBoard);
 
     //颜色设置
-    QString setColor="background-color:black;color:#95a0aa";
-    QString setOnlyColor="background-color:red;color:white";
-    ui->welcomeBtn->setStyleSheet(setColor);
-    ui->carMapBtn->setStyleSheet(setColor);
-    ui->autoNavigationBtn->setStyleSheet(setColor);
-    ui->flowCountBtn->setStyleSheet(setColor);
-    ui->aboutBtn->setStyleSheet(setColor);
-    ui->settingBtn->setStyleSheet(setColor);
+//    QString setColor="background-color:black;color:#95a0aa";
+//    QString setOnlyColor="background-color:red;color:white";
+//    ui->welcomeBtn->setStyleSheet(setColor);
+//    ui->carMapBtn->setStyleSheet(setColor);
+//    ui->autoNavigationBtn->setStyleSheet(setColor);
+//    ui->flowCountBtn->setStyleSheet(setColor);
+//    ui->aboutBtn->setStyleSheet(setColor);
+//    ui->settingBtn->setStyleSheet(setColor);
 
-    ui->mainBtn->setStyleSheet(setOnlyColor);
+//    ui->mainBtn->setStyleSheet(setOnlyColor);
 }
 
 //切换菜单导航主页面显示车辆监控
@@ -173,16 +179,16 @@ void Widget::onCarMapBtnClicked()
     ui->controlBoardSkd->setCurrentWidget(this->carcontrollBoard);
 
     //颜色设置
-    QString setColor="background-color:black;color:#95a0aa";
-    QString setOnlyColor="background-color:red;color:white";
-    ui->mainBtn->setStyleSheet(setColor);
-    ui->welcomeBtn->setStyleSheet(setColor);
-    ui->autoNavigationBtn->setStyleSheet(setColor);
-    ui->flowCountBtn->setStyleSheet(setColor);
-    ui->aboutBtn->setStyleSheet(setColor);
-    ui->settingBtn->setStyleSheet(setColor);
+//    QString setColor="background-color:black;color:#95a0aa";
+//    QString setOnlyColor="background-color:red;color:white";
+//    ui->mainBtn->setStyleSheet(setColor);
+//    ui->welcomeBtn->setStyleSheet(setColor);
+//    ui->autoNavigationBtn->setStyleSheet(setColor);
+//    ui->flowCountBtn->setStyleSheet(setColor);
+//    ui->aboutBtn->setStyleSheet(setColor);
+//    ui->settingBtn->setStyleSheet(setColor);
 
-    ui->carMapBtn->setStyleSheet(setOnlyColor);
+//    ui->carMapBtn->setStyleSheet(setOnlyColor);
 //    updateQss();
 }
 
@@ -194,20 +200,19 @@ void Widget::onAutoNavigationBtnClicked()
     {
         ui->controlBoardSkd->show();
     }
-//    ui->controlBoardSkd->show();
     ui->controlBoardSkd->setCurrentWidget(this->navigationBoard);
 
     //颜色设置
-    QString setColor="background-color:black;color:#95a0aa";
-    QString setOnlyColor="background-color:red;color:white";
-    ui->mainBtn->setStyleSheet(setColor);
-    ui->welcomeBtn->setStyleSheet(setColor);
-    ui->flowCountBtn->setStyleSheet(setColor);
-    ui->aboutBtn->setStyleSheet(setColor);
-    ui->settingBtn->setStyleSheet(setColor);
-    ui->carMapBtn->setStyleSheet(setColor);
+//    QString setColor="background-color:black;color:#95a0aa";
+//    QString setOnlyColor="background-color:red;color:white";
+//    ui->mainBtn->setStyleSheet(setColor);
+//    ui->welcomeBtn->setStyleSheet(setColor);
+//    ui->flowCountBtn->setStyleSheet(setColor);
+//    ui->aboutBtn->setStyleSheet(setColor);
+//    ui->settingBtn->setStyleSheet(setColor);
+//    ui->carMapBtn->setStyleSheet(setColor);
 
-    ui->autoNavigationBtn->setStyleSheet(setOnlyColor);
+//    ui->autoNavigationBtn->setStyleSheet(setOnlyColor);
 //    updateQss();
 }
 
@@ -216,16 +221,16 @@ void Widget::onAutoNavigationBtnClicked()
 void Widget::onAboutBtnClicked()
 {
     //颜色设置
-    QString setColor="background-color:black;color:#95a0aa";
-    QString setOnlyColor="background-color:red;color:white";
-    ui->mainBtn->setStyleSheet(setColor);
-    ui->welcomeBtn->setStyleSheet(setColor);
-    ui->carMapBtn->setStyleSheet(setColor);
-    ui->autoNavigationBtn->setStyleSheet(setColor);
-    ui->flowCountBtn->setStyleSheet(setColor);
-    ui->settingBtn->setStyleSheet(setColor);
+//    QString setColor="background-color:black;color:#95a0aa";
+//    QString setOnlyColor="background-color:red;color:white";
+//    ui->mainBtn->setStyleSheet(setColor);
+//    ui->welcomeBtn->setStyleSheet(setColor);
+//    ui->carMapBtn->setStyleSheet(setColor);
+//    ui->autoNavigationBtn->setStyleSheet(setColor);
+//    ui->flowCountBtn->setStyleSheet(setColor);
+//    ui->settingBtn->setStyleSheet(setColor);
 
-    ui->aboutBtn->setStyleSheet(setOnlyColor);
+//    ui->aboutBtn->setStyleSheet(setOnlyColor);
 
 //    aboutDialog->exec();
 
@@ -241,17 +246,17 @@ void Widget::onAboutBtnClicked()
 void Widget::onSettingBtnClicked()
 {
 
-    //颜色设置
-    QString setColor="background-color:black;color:#95a0aa";
-    QString setOnlyColor="background-color:red;color:white";
-    ui->mainBtn->setStyleSheet(setColor);
-    ui->welcomeBtn->setStyleSheet(setColor);
-    ui->carMapBtn->setStyleSheet(setColor);
-    ui->autoNavigationBtn->setStyleSheet(setColor);
-    ui->flowCountBtn->setStyleSheet(setColor);
-    ui->aboutBtn->setStyleSheet(setColor);
+//    //颜色设置
+//    QString setColor="background-color:black;color:#95a0aa";
+//    QString setOnlyColor="background-color:red;color:white";
+//    ui->mainBtn->setStyleSheet(setColor);
+//    ui->welcomeBtn->setStyleSheet(setColor);
+//    ui->carMapBtn->setStyleSheet(setColor);
+//    ui->autoNavigationBtn->setStyleSheet(setColor);
+//    ui->flowCountBtn->setStyleSheet(setColor);
+//    ui->aboutBtn->setStyleSheet(setColor);
 
-    ui->settingBtn->setStyleSheet(setOnlyColor);
+//    ui->settingBtn->setStyleSheet(setOnlyColor);
 
     settingDialog->exec();
 }
@@ -273,14 +278,14 @@ void Widget::updateConnectStatus()
 {
     qDebug()<<"设置之后连接";
     ui->connectBtn->setText("已连接");
-    ui->connectBtn->setStyleSheet("background-color:green;color:white;");
+    ui->connectBtn->setStyleSheet("background-color:#669933;color:white;");
 
     ui->controlBoardSkd->show();
 }
 void Widget::updateDisconnect()
 {
     qDebug()<<"连接断开";
-    ui->connectBtn->setStyleSheet("background-color:black;color:white;");
+    ui->connectBtn->setStyleSheet("background-color:#c9452b;color:white;");
     ui->connectBtn->setText("已断开");
     ui->controlBoardSkd->hide();
 }

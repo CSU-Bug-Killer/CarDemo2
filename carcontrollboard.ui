@@ -29,7 +29,7 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>111</y>
+     <y>30</y>
      <width>223</width>
      <height>191</height>
     </rect>
@@ -50,7 +50,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 0);
+     <string notr="true">background-color: #7d7d7d;;
 border-color: rgb(0, 0, 0);
 color: rgb(255, 255, 255);
 border-radius:5px;
@@ -83,7 +83,7 @@ border:solid 2px black;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 0);
+     <string notr="true">background-color:#7d7d7d;
 border-color: rgb(0, 0, 0);
 color: rgb(255, 255, 255);
 border-radius:5px;</string>
@@ -102,7 +102,7 @@ border-radius:5px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 0);
+     <string notr="true">background-color: #7d7d7d;
 border-color: rgb(0, 0, 0);
 color: rgb(255, 255, 255);
 border-radius:5px;
@@ -122,7 +122,7 @@ border:solid 2px black;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 0);
+     <string notr="true">background-color: #7d7d7d;
 border-color: rgb(0, 0, 0);
 color: rgb(255, 255, 255);
 border-radius:5px;</string>
@@ -141,7 +141,7 @@ border-radius:5px;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 0);
+     <string notr="true">background-color: #7d7d7d;
 border-color: rgb(0, 0, 0);
 color: rgb(255, 255, 255);
 border-radius:5px;
@@ -161,7 +161,7 @@ border:solid 2px black;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 0);
+     <string notr="true">background-color: #7d7d7d;
 border-color: rgb(0, 0, 0);
 color: rgb(255, 255, 255);
 border-radius:5px;</string>
@@ -173,9 +173,9 @@ border-radius:5px;</string>
    <widget class="QPushButton" name="actionControlBtn">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>140</y>
-      <width>141</width>
+      <x>0</x>
+      <y>150</y>
+      <width>221</width>
       <height>31</height>
      </rect>
     </property>
@@ -187,7 +187,7 @@ border-radius:5px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
+background-color: #7d7d7d;
 border-radius:5px;</string>
     </property>
     <property name="text">
@@ -199,7 +199,7 @@ border-radius:5px;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>340</y>
+     <y>250</y>
      <width>223</width>
      <height>151</height>
     </rect>
@@ -231,9 +231,9 @@ border-radius:5px;</string>
    <widget class="QPushButton" name="carLightSetBtn">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>30</y>
-      <width>71</width>
+      <x>0</x>
+      <y>120</y>
+      <width>221</width>
       <height>31</height>
      </rect>
     </property>
@@ -245,7 +245,7 @@ border-radius:5px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(0, 0, 0);
+background-color:#d77b31;
 border-radius:5px;</string>
     </property>
     <property name="text">
@@ -255,20 +255,20 @@ border-radius:5px;</string>
    <widget class="QPushButton" name="beeSwitchBtn">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>110</y>
-      <width>71</width>
-      <height>31</height>
+      <x>130</x>
+      <y>10</y>
+      <width>61</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>微软雅黑</family>
-      <pointsize>12</pointsize>
+      <pointsize>10</pointsize>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 0, 0);
+     <string notr="true">background-color: #d77b31;
 color:white;
 border-radius:5px;</string>
     </property>
@@ -283,9 +283,9 @@ border-radius:5px;</string>
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>110</y>
+      <y>0</y>
       <width>61</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
@@ -296,7 +296,7 @@ border-radius:5px;</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>5</y>
+      <y>50</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -308,8 +308,8 @@ border-radius:5px;</string>
    <widget class="QCheckBox" name="rightCbx">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>30</y>
+      <x>130</x>
+      <y>50</y>
       <width>91</width>
       <height>21</height>
      </rect>
@@ -322,7 +322,7 @@ border-radius:5px;</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>50</y>
+      <y>80</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -334,7 +334,7 @@ border-radius:5px;</string>
    <widget class="QCheckBox" name="roofBlueCbx">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>130</x>
       <y>70</y>
       <width>91</width>
       <height>41</height>
@@ -349,9 +349,9 @@ border-radius:5px;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>531</y>
+     <y>450</y>
      <width>223</width>
-     <height>91</height>
+     <height>131</height>
     </rect>
    </property>
    <property name="title">
@@ -409,18 +409,95 @@ border-radius:5px;</string>
      <string>方向:l-&gt;r</string>
     </property>
    </widget>
+   <widget class="QRadioButton" name="radioButton_3">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>89</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>3号小车</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>90</y>
+      <width>89</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>2号小车</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_4">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>110</y>
+      <width>89</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>4号小车</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>89</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1号小车</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
   </widget>
   <widget class="QLabel" name="actionLbl">
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>70</y>
+     <y>0</y>
      <width>223</width>
-     <height>41</height>
+     <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 255, 255);
+    <string notr="true">background-color: #7d7d7d;
+color: rgb(255, 255, 255);
 border-top-left-radius:15px;
 border-top-right-radius:15px;</string>
    </property>
@@ -435,13 +512,20 @@ border-top-right-radius:15px;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>310</y>
+     <y>220</y>
      <width>221</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 255, 255);
+    <string notr="true">background-color:#d77b31;
+color: rgb(255, 255, 255);
 border-top-left-radius:15px;
 border-top-right-radius:15px;</string>
    </property>
@@ -456,13 +540,20 @@ border-top-right-radius:15px;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>500</y>
+     <y>419</y>
      <width>223</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 255, 255);
+    <string notr="true">background-color: #7d7d7d;
+color: rgb(255, 255, 255);
 border-top-left-radius:15px;
 border-top-right-radius:15px;</string>
    </property>
@@ -473,71 +564,32 @@ border-top-right-radius:15px;</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QRadioButton" name="radioButton">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
+  <widget class="QLabel" name="locationLbl_2">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>89</width>
-     <height>16</height>
+     <x>0</x>
+     <y>580</y>
+     <width>223</width>
+     <height>31</height>
     </rect>
    </property>
-   <property name="text">
-    <string>1号小车</string>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+    </font>
    </property>
-   <property name="checked">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_2">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>20</y>
-     <width>89</width>
-     <height>16</height>
-    </rect>
+   <property name="styleSheet">
+    <string notr="true">background-color: #7d7d7d;
+color: rgb(255, 255, 255);
+border-bottom-left-radius:15px;
+border-bottom-right-radius:15px;</string>
    </property>
    <property name="text">
-    <string>2号小车</string>
+    <string/>
    </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_3">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>40</y>
-     <width>89</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>3号小车</string>
-   </property>
-  </widget>
-  <widget class="QRadioButton" name="radioButton_4">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>40</y>
-     <width>89</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>4号小车</string>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>

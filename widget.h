@@ -14,6 +14,7 @@
 #include "about.h"
 #include "communicawidget.h"
 #include "flowcount.h"
+#include "flowcontrolboard.h"
 
 
 namespace Ui {
@@ -87,6 +88,7 @@ private:
 
     //流量统计
     FlowCount* flowCount;
+    FlowControlBoard* flowcontrolBoard;
 
 
     void updateQss(void);

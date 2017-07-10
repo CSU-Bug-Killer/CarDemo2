@@ -23,12 +23,15 @@
    <iconset resource="icons.qrc">
     <normaloff>:/icon/BKlogo.png</normaloff>:/icon/BKlogo.png</iconset>
   </property>
-  <widget class="QWidget" name="">
+  <property name="styleSheet">
+   <string notr="true">background-image: url(:/image/bg.png);</string>
+  </property>
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>91</x>
      <y>10</y>
-     <width>830</width>
+     <width>836</width>
      <height>556</height>
     </rect>
    </property>
@@ -89,7 +92,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="welcomeBtn">
+        <widget class="QToolButton" name="welcomeBtn">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -111,11 +114,10 @@
          <property name="font">
           <font>
            <family>Agency FB</family>
-           <pointsize>16</pointsize>
-           <weight>50</weight>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
            <italic>false</italic>
-           <bold>false</bold>
-           <stylestrategy>PreferDefault</stylestrategy>
+           <bold>true</bold>
           </font>
          </property>
          <property name="focusPolicy">
@@ -128,8 +130,10 @@
           <bool>false</bool>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 13pt &quot;CloudZongYiGBK&quot;;
-font: 16pt &quot;Agency FB&quot;;</string>
+          <string notr="true"/>
+         </property>
+         <property name="inputMethodHints">
+          <set>Qt::ImhNone</set>
          </property>
          <property name="text">
           <string>欢迎</string>
@@ -141,7 +145,7 @@ font: 16pt &quot;Agency FB&quot;;</string>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="mainBtn">
+        <widget class="QToolButton" name="mainBtn">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
            <horstretch>0</horstretch>
@@ -163,17 +167,17 @@ font: 16pt &quot;Agency FB&quot;;</string>
          <property name="font">
           <font>
            <family>CloudZongYiGBK</family>
-           <pointsize>13</pointsize>
-           <weight>50</weight>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
            <italic>false</italic>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="contextMenuPolicy">
           <enum>Qt::DefaultContextMenu</enum>
          </property>
          <property name="styleSheet">
-          <string notr="true">font: 13pt &quot;CloudZongYiGBK&quot;;</string>
+          <string notr="true"/>
          </property>
          <property name="text">
           <string>路况管控</string>
@@ -181,12 +185,6 @@ font: 16pt &quot;Agency FB&quot;;</string>
          <property name="icon">
           <iconset resource="icons.qrc">
            <normaloff>:/icon/main.png</normaloff>:/icon/main.png</iconset>
-         </property>
-         <property name="autoDefault">
-          <bool>false</bool>
-         </property>
-         <property name="default">
-          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -219,7 +217,7 @@ font: 16pt &quot;Agency FB&quot;;</string>
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>16</pointsize>
+           <pointsize>12</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -265,7 +263,7 @@ font: 16pt &quot;Agency FB&quot;;</string>
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>16</pointsize>
+           <pointsize>12</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -302,6 +300,13 @@ font: 16pt &quot;Agency FB&quot;;</string>
            <height>16777215</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="text">
           <string>流量统计</string>
          </property>
@@ -334,7 +339,7 @@ font: 16pt &quot;Agency FB&quot;;</string>
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>16</pointsize>
+           <pointsize>12</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -374,7 +379,7 @@ font: 16pt &quot;Agency FB&quot;;</string>
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>16</pointsize>
+           <pointsize>12</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -410,7 +415,7 @@ font: 16pt &quot;Agency FB&quot;;</string>
          <widget class="QPushButton" name="pushButton">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>594</width>
             <height>40</height>
            </size>
           </property>
@@ -429,6 +434,19 @@ font: 16pt &quot;Agency FB&quot;;</string>
          </widget>
         </item>
         <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
          <widget class="QPushButton" name="connectBtn">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -440,12 +458,6 @@ font: 16pt &quot;Agency FB&quot;;</string>
            <size>
             <width>20</width>
             <height>0</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>87</width>
-            <height>16777215</height>
            </size>
           </property>
           <property name="styleSheet">
@@ -496,7 +508,7 @@ font: 16pt &quot;Agency FB&quot;;</string>
           </property>
           <property name="minimumSize">
            <size>
-            <width>223</width>
+            <width>0</width>
             <height>0</height>
            </size>
           </property>

@@ -29,13 +29,20 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>0</y>
+     <y>170</y>
      <width>221</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 255, 255);
+    <string notr="true">background-color: #7d7d7d;
+color: rgb(255, 255, 255);
 border-top-left-radius:15px;
 border-top-right-radius:15px;</string>
    </property>
@@ -50,9 +57,9 @@ border-top-right-radius:15px;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>30</y>
+     <y>200</y>
      <width>221</width>
-     <height>141</height>
+     <height>131</height>
     </rect>
    </property>
    <property name="title">
@@ -100,7 +107,7 @@ border-top-right-radius:15px;</string>
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>50</y>
+      <y>60</y>
       <width>54</width>
       <height>21</height>
      </rect>
@@ -113,7 +120,7 @@ border-top-right-radius:15px;</string>
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>50</y>
+      <y>60</y>
       <width>91</width>
       <height>22</height>
      </rect>
@@ -137,11 +144,21 @@ border-top-right-radius:15px;</string>
    <widget class="QPushButton" name="setTrafficModelBtn">
     <property name="geometry">
      <rect>
-      <x>30</x>
+      <x>0</x>
       <y>100</y>
-      <width>151</width>
+      <width>221</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #7d7d7d;
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>应用</string>
@@ -152,10 +169,13 @@ border-top-right-radius:15px;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>200</y>
+     <y>400</y>
      <width>221</width>
      <height>141</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <property name="title">
     <string/>
@@ -163,11 +183,21 @@ border-top-right-radius:15px;</string>
    <widget class="QPushButton" name="applyLightBtn">
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>0</x>
       <y>100</y>
-      <width>151</width>
+      <width>221</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微软雅黑</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+background-color: #d77b31;</string>
     </property>
     <property name="text">
      <string>应用</string>
@@ -282,13 +312,20 @@ border-top-right-radius:15px;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>170</y>
+     <y>370</y>
      <width>221</width>
      <height>31</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>微软雅黑</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(170, 255, 255);
+    <string notr="true">background-color:#d77b31;
+color: rgb(255, 255, 255);
 border-top-left-radius:15px;
 border-top-right-radius:15px;</string>
    </property>

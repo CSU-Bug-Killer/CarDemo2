@@ -1,20 +1,17 @@
 QPushButton{
-    background-color:black;
-    color:#95a0aa;
+    background-color:white;
+    color:#aaaaaa;
     font-weight:blod;
     border:none;
 }
 
-QPushButton#welcomeBtn:hover,#mainBtn:hover,#carMapBtn:hover,#autoNavigationBtn:hover,#aboutBtn:hover,#settingBtn:hover{
+QPushButton#welcomeBtn:hover,#mainBtn:hover,#carMapBtn:hover,#autoNavigationBtn:hover,#flowCountBtn,#aboutBtn:hover,#settingBtn:hover{
     color:white;
-    background-color:#dd2a30;
+    background-color:#669933;
 }
 
-QGroupBox#groupBox{
-    width:241px;
-    height:674px;
-    /*background-color:#32323a;*/
-    background-color:#000;
+QPushButton#connectBtn{
+    background-color:#c9452b;
 }
-*/
+
 

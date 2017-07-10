@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     communicawidget.cpp \
     singlemap.cpp \
     flowcount.cpp \
-    database.cpp
+    database.cpp \
+    flowcontrolboard.cpp
 
 
 HEADERS  += widget.h \
@@ -47,7 +48,8 @@ HEADERS  += widget.h \
     singlemap.h \
     flowcount.h \
     initdb.h \
-    database.h
+    database.h \
+    flowcontrolboard.h
 
 FORMS    += widget.ui \
     welcomepage.ui \
@@ -59,7 +61,8 @@ FORMS    += widget.ui \
     navigationControllBoard.ui \
     about.ui \
     setting.ui \
-    flowcount.ui
+    flowcount.ui \
+    flowcontrolboard.ui
 
 RESOURCES += \
     icons.qrc \
