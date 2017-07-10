@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>898</width>
-    <height>456</height>
+    <width>975</width>
+    <height>560</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -28,6 +28,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QGroupBox" name="groupBox">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
          <horstretch>0</horstretch>
@@ -66,7 +69,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>223</width>
+            <width>60</width>
             <height>102</height>
            </size>
           </property>
@@ -81,33 +84,28 @@
         <item>
          <widget class="QPushButton" name="welcomeBtn">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
           <property name="minimumSize">
            <size>
-            <width>221</width>
-            <height>32</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>221</width>
+            <width>90</width>
             <height>32</height>
            </size>
           </property>
           <property name="font">
            <font>
-            <family>Arial</family>
-            <pointsize>16</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <family>CloudZongYiGBK</family>
+            <pointsize>13</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">font: 13pt &quot;CloudZongYiGBK&quot;;</string>
           </property>
           <property name="text">
            <string>        欢迎        &gt;</string>
@@ -121,14 +119,14 @@
         <item>
          <widget class="QPushButton" name="mainBtn">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
           <property name="minimumSize">
            <size>
-            <width>221</width>
+            <width>90</width>
             <height>32</height>
            </size>
           </property>
@@ -140,14 +138,15 @@
           </property>
           <property name="font">
            <font>
-            <family>Arial</family>
-            <pointsize>16</pointsize>
-            <weight>75</weight>
-            <bold>true</bold>
+            <family>CloudZongYiGBK</family>
+            <pointsize>13</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
            </font>
           </property>
           <property name="styleSheet">
-           <string notr="true"/>
+           <string notr="true">font: 13pt &quot;CloudZongYiGBK&quot;;</string>
           </property>
           <property name="text">
            <string>     路况管控      &gt;</string>
@@ -168,7 +167,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>221</width>
+            <width>90</width>
             <height>32</height>
            </size>
           </property>
@@ -199,7 +198,7 @@
            <string>     车辆控制      &gt;</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset>
             <normaloff>:/icon/count.png</normaloff>:/icon/count.png</iconset>
           </property>
          </widget>
@@ -214,7 +213,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>221</width>
+            <width>90</width>
             <height>32</height>
            </size>
           </property>
@@ -260,7 +259,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>221</width>
+            <width>90</width>
             <height>32</height>
            </size>
           </property>
@@ -300,7 +299,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>221</width>
+            <width>90</width>
             <height>32</height>
            </size>
           </property>
@@ -338,6 +337,12 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="text">
            <string>已断开</string>
           </property>
@@ -360,8 +365,8 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>400</width>
-         <height>400</height>
+         <width>500</width>
+         <height>500</height>
         </size>
        </property>
        <property name="styleSheet">
@@ -397,9 +402,6 @@
     </layout>
    </item>
   </layout>
-  <zorder>layoutWidget</zorder>
-  <zorder>mapBoardSkd</zorder>
-  <zorder>titleBtn</zorder>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>

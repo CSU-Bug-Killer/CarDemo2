@@ -4,5 +4,6 @@
         <file>image/map.png</file>
         <file>resource/cardInfoShort.txt</file>
         <file>resource/cardNumber.txt</file>
+        <file>image/bg.png</file>
     </qresource>
 </RCC>

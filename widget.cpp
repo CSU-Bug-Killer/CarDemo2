@@ -5,11 +5,12 @@
 #include <QFile>
 #include <QMessageBox>
 #include <QDialogButtonBox>
-
+#include <QFontDatabase>
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget)
 {
+
     ui->setupUi(this);
 //    resize(1198,674);
 
