@@ -19,8 +19,8 @@ public:
 protected:
     void    paintEvent(QPaintEvent *);
 public slots:
-        void parseMsg(QString msg);
-        void updateMap(QString s1,QString s2);
+    void parseMsg(QString msg);
+    void updateMap(QString s1,QString s2);
 
 private:
     Ui::Map* ui;

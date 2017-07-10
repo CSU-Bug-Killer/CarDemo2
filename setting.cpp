@@ -57,6 +57,8 @@ void Setting::onButtonBoxAccepted()
     }else{
         QString host = ui->hostAddrLdt->text();
         QString port = ui->hostPortLdt->text();
+        qDebug()<< host;
+        qDebug()<< port;
         singleConnect->connectServer(host,port);
         qDebug()<<"setHostInfoSetting";
         this->close();

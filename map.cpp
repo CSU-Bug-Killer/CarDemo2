@@ -8,6 +8,7 @@
 #include "communicawidget.h"
 #include <QDebug>
 #include <QColor>
+#include <QtMath>
 
 Map::Map(QWidget *parent) :
     QWidget(parent),
@@ -45,7 +46,9 @@ void Map::paintEvent(QPaintEvent *)
     timer.start(1000);
     connect(&timer,SIGNAL(timeout()),this,SLOT(update()));
 
-//  painter.scale(width()/1000.0, height()/1000.0);
+    qint32 side=qMin(width(),height());
+    painter.scale(side/700.0,side/700.0);
+
     painter.setRenderHints(QPainter::Antialiasing);//抗锯齿
     painter.drawPixmap(0, 0, 700, 700, map->getBackground());//画地图
 
@@ -164,6 +167,7 @@ void Map::parseMsg(QString msg)
 //                        "}"
 //                        "}"
 //                       );
+    qDebug()<<"$$$$$$$$$$$qqqqqqq";
     QString json = msg;
 
            QJsonParseError error;
@@ -192,7 +196,7 @@ void Map::parseMsg(QString msg)
                   qDebug()<< data["returnType"].toString();
                    if("roadLights" == data["returnType"]){
                        QVariantMap returnData = data["returnData"].toMap();
-                  //      qDebug()<<returnData;
+                        qDebug()<<"$$$$$$$$$$$";
 
                     //   qDebug() << returnData["status1"].toString();
 //                       qDebug() << returnData["status2"].toString();
