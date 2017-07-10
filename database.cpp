@@ -48,6 +48,13 @@ bool DataBase::createTb()
     if(success)
     {
         qDebug() << QObject::tr("lyy: create DB SUCCESS！\n");
+
+        //初始化一些记录
+        for(int i=0;i<12;i++)
+        {
+            QString tmp=QObject::tr("%1").arg(i*3+1);
+            insertToCards(tmp);
+        }
         return true;
     }
     else
@@ -55,6 +62,8 @@ bool DataBase::createTb()
         qDebug() << QObject::tr("lyy: create DB FAILED！\n");
         return false;
     }
+
+
 }
 
 //向数据库中插入记录

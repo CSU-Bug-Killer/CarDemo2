@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "communicawidget.h"
+#include "carmap.h"
 
 namespace Ui {
 class CarControllBoard;
@@ -31,7 +32,8 @@ private slots:
     void onActionControlBtnClicked();
     void onCarLightSetBtnClicked();
 
-    void showCarPosition();
+    void showCarPosition(QString msg);
+    void getSignal(QString msg);
 
 
 private:
@@ -39,6 +41,11 @@ private:
     CommunicaWidget* singleConnect;
     QString carNum="car1";
     bool isOpen=false;
+
+    CarMap* carmap;
+    int xAxis=0;
+    int yAxis=0;
+    QString Direction="顺时针";
 };
 
 #endif // CARCONTROLLBOARD_H

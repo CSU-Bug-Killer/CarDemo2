@@ -351,43 +351,17 @@ border-radius:5px;</string>
      <x>0</x>
      <y>450</y>
      <width>223</width>
-     <height>131</height>
+     <height>101</height>
     </rect>
    </property>
    <property name="title">
     <string/>
    </property>
-   <widget class="QLabel" name="xAxisLbl">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>20</y>
-      <width>81</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>X轴坐标:0.00</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="yAxisLbl">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>20</y>
-      <width>81</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Y轴坐标:0.00</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="roadNumberLbl">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>60</y>
+      <x>10</x>
+      <y>20</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -400,7 +374,7 @@ border-radius:5px;</string>
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>60</y>
+      <y>20</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -416,7 +390,7 @@ border-radius:5px;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>110</y>
+      <y>70</y>
       <width>89</width>
       <height>16</height>
      </rect>
@@ -432,7 +406,7 @@ border-radius:5px;</string>
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>90</y>
+      <y>50</y>
       <width>89</width>
       <height>16</height>
      </rect>
@@ -448,7 +422,7 @@ border-radius:5px;</string>
     <property name="geometry">
      <rect>
       <x>120</x>
-      <y>110</y>
+      <y>70</y>
       <width>89</width>
       <height>16</height>
      </rect>
@@ -464,7 +438,7 @@ border-radius:5px;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>90</y>
+      <y>50</y>
       <width>89</width>
       <height>16</height>
      </rect>
@@ -568,7 +542,7 @@ border-top-right-radius:15px;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>580</y>
+     <y>550</y>
      <width>223</width>
      <height>31</height>
     </rect>

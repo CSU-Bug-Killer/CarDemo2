@@ -10,6 +10,9 @@
 #include "carcontrollboard.h"
 #include "ui_carcontrollboard.h"
 
+#include <QJsonParseError>
+#include <QJsonDocument>
+#include <QString>
 
 #include <QDebug>
 
@@ -19,7 +22,7 @@ CarControllBoard::CarControllBoard(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    showCarPosition();
+    showCarPosition("21");
 
     //蜂鸣器开关按钮点击绑定事件
     connect(ui->beeSwitchBtn,SIGNAL(clicked(bool)),
@@ -53,9 +56,8 @@ CarControllBoard::CarControllBoard(QWidget *parent) :
     //车灯控制绑定
     connect(ui->carLightSetBtn,SIGNAL(clicked(bool)),
             this,SLOT(onCarLightSetBtnClicked()));
-
-
-
+    connect(singleConnect,SIGNAL(signalReadMesg(QString)),
+            this,SLOT(getSignal(QString)));
 
 }
 
@@ -85,6 +87,32 @@ void CarControllBoard::onCarLightSetBtnClicked()
     QString roofRightBlue = ui->roofBlueCbx->isChecked()?"1":"0";
     singleConnect->controlLight(carNum,roofRightBlue,roofLeftRed,headRight,headLeft);
 
+}
+
+void CarControllBoard::getSignal(QString msg)
+{
+    QString json = msg;
+    QJsonParseError error;
+    QJsonDocument jsonDocument = QJsonDocument::fromJson(json.toUtf8(),&error);
+    if(error.error == QJsonParseError::NoError){
+        if(jsonDocument.isObject()){
+            QVariantMap result = jsonDocument.toVariant().toMap();
+
+            QVariantMap data = result["data"].toMap();
+            qDebug() << "returnType:" << data["returnType"];
+
+            if("carPosition"==data["returnType"]){
+                QVariantMap returnData = data["returnData"].toMap();
+                msg=returnData["position"].toString();
+            }
+        }
+    }
+//    QPoint m(carmap->point.x(),carmap->point.y());
+//    qDebug()<<m;
+//    xAxis=m.x();
+//    yAxis=m.y();
+
+    showCarPosition(msg);
 }
 
 void CarControllBoard::switchChangeState()
@@ -138,17 +166,49 @@ void CarControllBoard::onResetBtnClicked()
 }
 
 //显示小车位置
-void CarControllBoard::showCarPosition(){
-    QString xAxis="130";
-    QString yAxis="40";
+void CarControllBoard::showCarPosition(QString msg){
+
     QString roadNum="1";
-    ui->xAxisLbl->setText(ui->xAxisLbl->text().left(5)+xAxis);
-    ui->yAxisLbl->setText(ui->yAxisLbl->text().left(5)+yAxis);
-    ui->roadNumberLbl->setText(ui->roadNumberLbl->text().left(3)+roadNum+tr("号路"));
-    if(roadNum.toInt()%2==0){
-        ui->directionLbl->setText(ui->directionLbl->text().left(3)+tr("逆时针"));
-    }else{
-        ui->directionLbl->setText(ui->directionLbl->text().left(3)+tr("顺时针"));
+    QStringList roadList;
+    roadList.append("1");
+    roadList.append("3");
+    roadList.append("14");
+    roadList.append("16");
+    roadList.append("12");
+    roadList.append("10");
+    roadList.append("23");
+    roadList.append("21");
+    roadList.append("2");
+    roadList.append("4");
+    roadList.append("13");
+    roadList.append("15");
+    roadList.append("11");
+    roadList.append("9");
+    roadList.append("24");
+    roadList.append("22");
+    roadList.append("17");
+    roadList.append("19");
+    roadList.append("18");
+    roadList.append("20");
+    roadList.append("5");
+    roadList.append("7");
+    roadList.append("6");
+    roadList.append("8");
+
+
+
+    //找到小车对应的卡号和路号
+    QString cardNum=msg;
+    if(cardNum.toInt()%3==0){
+        roadNum=roadList.at(cardNum.toInt()/3);
     }
+    if(roadNum=="1"||roadNum=="3"||roadNum=="14"||roadNum=="16"||roadNum=="70"||roadNum=="12"||roadNum=="10"||roadNum=="21"||roadNum=="23"){
+        Direction="逆时针";
+    }
+
+//    ui->xAxisLbl->setText(ui->xAxisLbl->text().left(5)+tr("%1").arg(xAxis));
+//    ui->yAxisLbl->setText(ui->yAxisLbl->text().left(5)+tr("%1").arg(yAxis));
+    ui->roadNumberLbl->setText(ui->roadNumberLbl->text().left(3)+roadNum+tr("号路"));
+    ui->directionLbl->setText(ui->directionLbl->text().left(3)+tr("%1").arg(Direction));
 }
 

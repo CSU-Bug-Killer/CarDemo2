@@ -12,7 +12,8 @@ Widget::Widget(QWidget *parent) :
 {
 
     ui->setupUi(this);
-    resize(1000,600);
+    resize(650,600);
+
 
     //引用样式文件
     updateQss();
@@ -46,7 +47,7 @@ Widget::Widget(QWidget *parent) :
 
 
     //初始化页面菜单导航栏样式
-    ui->welcomeBtn->setStyleSheet("background-color:#669933; color:white");
+    ui->welcomeBtn->setStyleSheet("background-color:green; color:white");
     ui->mapBoardSkd->setCurrentWidget(this->welWidget);
 
     //连接菜单导航点击切换界面槽函数
@@ -103,12 +104,12 @@ void Widget::updateQss(){
 
 void Widget::onFlowCountBtnClicked()
 {
+    resize(900,600);
     ui->mapBoardSkd->setCurrentWidget(this->flowCount);
     ui->controlBoardSkd->setCurrentWidget(flowcontrolBoard);
-    if(ui->connectBtn->text()=="已连接"){
-        ui->controlBoardSkd->show();
-        }
-
+//    if(ui->connectBtn->text()=="已连接"){
+    ui->controlBoardSkd->hide();
+//    }
 
         //样式控制
 //    QString setColor="background-color:black;color:#95a0aa";
@@ -126,6 +127,7 @@ void Widget::onFlowCountBtnClicked()
 //切换菜单导航主页面显示欢迎页面
 void Widget::onWelcomeBtnClicked()
 {
+    resize(900,600);
     ui->mapBoardSkd->setCurrentWidget(this->welWidget);
     ui->controlBoardSkd->hide();
 
@@ -150,6 +152,7 @@ void Widget::onMainBtnClicked()
     ui->mapBoardSkd->setCurrentWidget(this->mapWidget);
     if(ui->connectBtn->text()=="已连接")
     {
+        resize(900,600);
         ui->controlBoardSkd->show();
     }
     ui->controlBoardSkd->setCurrentWidget(this->lightcontrollBoard);
@@ -174,6 +177,7 @@ void Widget::onCarMapBtnClicked()
     ui->mapBoardSkd->setCurrentWidget(this->carMapWidget);
     if(ui->connectBtn->text()=="已连接")
     {
+        resize(900,600);
         ui->controlBoardSkd->show();
     }
     ui->controlBoardSkd->setCurrentWidget(this->carcontrollBoard);
@@ -198,6 +202,7 @@ void Widget::onAutoNavigationBtnClicked()
     ui->mapBoardSkd->setCurrentWidget(this->autoNavigationWidget);
     if(ui->connectBtn->text()=="已连接")
     {
+        resize(900,600);
         ui->controlBoardSkd->show();
     }
     ui->controlBoardSkd->setCurrentWidget(this->navigationBoard);
@@ -280,11 +285,21 @@ void Widget::updateConnectStatus()
     ui->connectBtn->setText("已连接");
     ui->connectBtn->setStyleSheet("background-color:#669933;color:white;");
 
-    ui->controlBoardSkd->show();
+    if(ui->mapBoardSkd->currentWidget()==welWidget){
+
+    }else{
+        resize(900,600);
+        ui->controlBoardSkd->show();
+    }
 }
 void Widget::updateDisconnect()
 {
     qDebug()<<"连接断开";
+    if(ui->mapBoardSkd->currentWidget()==welWidget){
+        resize(900,600);
+    }else{
+        resize(650,600);
+    }
     ui->connectBtn->setStyleSheet("background-color:#c9452b;color:white;");
     ui->connectBtn->setText("已断开");
     ui->controlBoardSkd->hide();
