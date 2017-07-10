@@ -198,7 +198,7 @@
            <string>     车辆控制      &gt;</string>
           </property>
           <property name="icon">
-           <iconset>
+           <iconset resource="icons.qrc">
             <normaloff>:/icon/count.png</normaloff>:/icon/count.png</iconset>
           </property>
          </widget>
@@ -246,6 +246,13 @@
           <property name="icon">
            <iconset resource="icons.qrc">
             <normaloff>:/icon/cut.png</normaloff>:/icon/cut.png</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="flowCountBtn">
+          <property name="text">
+           <string>流量统计  &gt;</string>
           </property>
          </widget>
         </item>

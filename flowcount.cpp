@@ -10,6 +10,9 @@
 #include <QtCharts/QLegend>
 #include <QtCharts/QBarCategoryAxis>
 #include <QHBoxLayout>
+#include <QJsonParseError>
+#include <QJsonDocument>
+#include <QVariantMap>
 
 
 QT_CHARTS_USE_NAMESPACE
@@ -30,21 +33,31 @@ FlowCount::FlowCount(QWidget *parent) :
             this,SLOT(onReadMessageSave(QString)));
 
     d->createConn();
-//    d.createTb();
-//    for(int i=0; i<12; i++){
-//        d->insertToCards(tr("%1").arg(i*3+1));
-//    }
     d->queryAll();
-//    d.deleteById();
-
-    QHBoxLayout* layout = drawCharts();
-    this->setLayout(layout);
-    this->resize(400,300);
+    drawCharts();
+//    this->resize(400,300);
 }
 
 //读取到信息则保存
 void FlowCount::onReadMessageSave(QString msg){
+
     qDebug()<<"接受卡号:";
+    QString json = msg;
+    QJsonParseError error;
+    QJsonDocument jsonDocument = QJsonDocument::fromJson(json.toUtf8(),&error);
+    if(error.error == QJsonParseError::NoError){
+        if(jsonDocument.isObject()){
+            QVariantMap result = jsonDocument.toVariant().toMap();
+
+            QVariantMap data = result["data"].toMap();
+            qDebug() << "returnType:" << data["returnType"];
+
+            if("carPosition"==data["returnType"]){
+                QVariantMap returnData = data["returnData"].toMap();
+                msg=returnData["position"].toString();
+            }
+        }
+    }
     if(msg.toInt()%3==1){
         d->createConn();  //创建连接
         //将读到的卡写入到数据库中
@@ -54,11 +67,13 @@ void FlowCount::onReadMessageSave(QString msg){
     qDebug()<<msg;
 }
 
-QHBoxLayout* FlowCount::drawCharts(){
+void FlowCount::drawCharts(){
+
+//    QHBoxLayout* l = new QHBoxLayout();
+//    this->setLayout(l);
+//    ui->setupUi();
     QStringList dateSeries=dateMsg.split(";");
     //有24条路，每条路显示近两天的车流量
-    QString day1="";
-    QString day2="";
     int firstDay[12];
     int secondDay[12];
     for (int i=0;i<12;i++)
@@ -116,9 +131,9 @@ QHBoxLayout* FlowCount::drawCharts(){
 
     QHBoxLayout* layout = new QHBoxLayout();
     layout->addWidget(chartView);
-
-
-    return layout;
+//    l->destroyed();
+    this->setLayout(layout);
+//    return layout;
 }
 
 FlowCount::~FlowCount(){

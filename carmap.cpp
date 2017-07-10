@@ -73,21 +73,8 @@ void CarMap::paintEvent(QPaintEvent *)
 
 void CarMap::parseMsg(QString msg)
 {
-    /*
-        * msg = "{"
-        */
-       qDebug() << "sendSlot";
-    //           QString json("{"
-    //                        "\"message\":\"小车位置\","
-    //                        "\"data\":{"
-    //                        "\"returnType\":\"carPosition\","
-    //                        "\"returnData\":{"
-    //                        "\"device\":\"car1\","
-    //                        "\"position\":\"36\""
-    //                        "}"
-    //                        "}"
-    //                        "}"
-    //                       );
+    qDebug() << "sendSlot";
+
     QString json = msg;
 
     QJsonParseError error;
@@ -95,12 +82,6 @@ void CarMap::parseMsg(QString msg)
     if(error.error == QJsonParseError::NoError){
         if(jsonDocument.isObject()){
             QVariantMap result = jsonDocument.toVariant().toMap();
-     //       qDebug() << "message:" << result["message"].toString();
-            //            qDebug() << "plugins:";
-
-            //            foreach(QVariant plugin,result["plug-ins"].toList()){
-            //                qDebug() << "\t-" << plugin.toString();
-            //            }
 
             QVariantMap data = result["data"].toMap();
             qDebug() << "returnType:" << data["returnType"];
@@ -113,16 +94,6 @@ void CarMap::parseMsg(QString msg)
                 emit carMapUpdate(returnData["position"].toString());
 
             }
-//            if("roadLights" == data["roadLights"]){
-
-//            }
-
-            //                   QVariantMap returnData = data["returnData"].toMap();
-            //    qDebug() << "device:" << returnData["device"].toString();
-            //                   qDebug() << "position:" << returnData["position"];
-
-            //            qDebug() << "length]]:" << nestedMap["length"].toInt();
-            //            qDebug() << "use_space:" << nestedMap["use_space"].toBool();
         }
     }else{
         qFatal(error.errorString().toUtf8().constData());

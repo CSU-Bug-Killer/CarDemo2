@@ -30,7 +30,7 @@ private:
     QString dateMsg;
     QString flowMsg;
     DataBase* d;
-    QHBoxLayout *drawCharts();
+    void drawCharts();
 };
 
 #endif // FLOWCOUNT_H
