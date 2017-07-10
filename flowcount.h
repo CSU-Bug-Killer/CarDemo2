@@ -3,6 +3,10 @@
 
 #include <QWidget>
 #include "communicawidget.h"
+#include <QHBoxLayout>
+#include "database.h"
+//#include <QtSql>
+
 
 namespace Ui {
 class FlowCount;
@@ -22,6 +26,11 @@ private:
     Ui::FlowCount* ui;
 
     CommunicaWidget* conServer;
+
+    QString dateMsg;
+    QString flowMsg;
+    DataBase* d;
+    QHBoxLayout *drawCharts();
 };
 
 #endif // FLOWCOUNT_H

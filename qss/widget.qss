@@ -1,23 +1,15 @@
-/*左侧菜单选项颜色*/
 QPushButton{
     background-color:black;
     color:#95a0aa;
     font-weight:blod;
     border:none;
 }
-/*
-QPushButton#title:hover{
-    background-color:black;
-}
-*
 
-/*鼠标移上时的颜色变化*/
 QPushButton#welcomeBtn:hover,#mainBtn:hover,#carMapBtn:hover,#autoNavigationBtn:hover,#aboutBtn:hover,#settingBtn:hover{
     color:white;
     background-color:#dd2a30;
 }
 
-/*左侧背景颜色
 QGroupBox#groupBox{
     width:241px;
     height:674px;

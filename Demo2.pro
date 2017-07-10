@@ -4,7 +4,11 @@
 #
 #-------------------------------------------------
 
-QT       += core gui network
+!include( ./myCharts/examples.pri ) {
+ error( "Couldn't find the examples.pri file!" )
+}
+
+QT       += core gui network sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets network
 
@@ -25,7 +29,8 @@ SOURCES += main.cpp\
     about.cpp \
     communicawidget.cpp \
     singlemap.cpp \
-    flowcount.cpp
+    flowcount.cpp \
+    database.cpp
 
 
 HEADERS  += widget.h \
@@ -40,7 +45,9 @@ HEADERS  += widget.h \
     about.h \
     communicawidget.h \
     singlemap.h \
-    flowcount.h
+    flowcount.h \
+    initdb.h \
+    database.h
 
 FORMS    += widget.ui \
     welcomepage.ui \
@@ -60,4 +67,5 @@ RESOURCES += \
     src.qrc
 
 DISTFILES += \
-    widget.qss
+    widget.qss \
+    myCharts/examples.pri

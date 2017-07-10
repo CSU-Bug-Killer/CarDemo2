@@ -13,8 +13,8 @@
 #include "setting.h"
 #include "about.h"
 #include "communicawidget.h"
+#include "flowcount.h"
 
-//#include "connectserver.h"
 
 namespace Ui {
 class Widget;
@@ -42,6 +42,8 @@ private slots:
     void onCarMapBtnClicked();
 
     void onAutoNavigationBtnClicked();
+
+    void onFlowCountBtnClicked();
 
     void onAboutBtnClicked();
 
@@ -83,9 +85,9 @@ private:
 
     Setting* settingDialog;
 
+    //流量统计
+    FlowCount* flowCount;
 
-//    ConnectServer* socket;
-//    About* aboutDialog;
 
     void updateQss(void);
 

@@ -11,7 +11,7 @@ Widget::Widget(QWidget *parent) :
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
-//    resize(1198,674);
+    resize(1000,600);
 
     //引用样式文件
     updateQss();
@@ -28,6 +28,8 @@ Widget::Widget(QWidget *parent) :
     ui->mapBoardSkd->addWidget(carMapWidget);
     this->autoNavigationWidget = new AutoNavigation;
     ui->mapBoardSkd->addWidget(autoNavigationWidget);
+    this->flowCount=new FlowCount;
+    ui->mapBoardSkd->addWidget(flowCount);
 
     //
 
@@ -57,6 +59,8 @@ Widget::Widget(QWidget *parent) :
             this,SLOT(onSettingBtnClicked()));
     connect(ui->autoNavigationBtn,SIGNAL(clicked(bool)),
             this,SLOT(onAutoNavigationBtnClicked()));
+    connect(ui->flowCountBtn,SIGNAL(clicked(bool)),
+            this,SLOT(onFlowCountBtnClicked()));
 
     settingDialog = new Setting;
 
@@ -72,14 +76,6 @@ Widget::Widget(QWidget *parent) :
     connect(conServer,SIGNAL(disConToServer()),
             this,SLOT(updateDisconnect()));
 
-    //与服务器连接或断开，改变提示按钮样式
-//    connect(conServer->m_tcpSocket,SIGNAL(connected()),
-//            this,SLOT(updateConnectStatus()));
-
-//    connect(conServer->m_tcpSocket,SIGNAL(disconnected()),
-//            this,SLOT(updateDisconnect()));
-
-    //设置端口和主机地址
 
 }
 Widget::~Widget()
@@ -102,6 +98,25 @@ void Widget::updateQss(){
     }
 }
 
+void Widget::onFlowCountBtnClicked()
+{
+    ui->mapBoardSkd->setCurrentWidget(this->flowCount);
+//    if(ui->connectBtn->text()=="已断开"){
+        ui->controlBoardSkd->hide();
+//        }
+
+    QString setColor="background-color:black;color:#95a0aa";
+    QString setOnlyColor="background-color:red;color:white";
+    ui->mainBtn->setStyleSheet(setColor);
+    ui->carMapBtn->setStyleSheet(setColor);
+    ui->autoNavigationBtn->setStyleSheet(setColor);
+    ui->aboutBtn->setStyleSheet(setColor);
+    ui->settingBtn->setStyleSheet(setColor);
+    ui->welcomeBtn->setStyleSheet(setColor);
+
+    ui->flowCountBtn->setStyleSheet(setOnlyColor);
+}
+
 //切换菜单导航主页面显示欢迎页面
 void Widget::onWelcomeBtnClicked()
 {
@@ -112,20 +127,24 @@ void Widget::onWelcomeBtnClicked()
     ui->mainBtn->setStyleSheet(setColor);
     ui->carMapBtn->setStyleSheet(setColor);
     ui->autoNavigationBtn->setStyleSheet(setColor);
+    ui->flowCountBtn->setStyleSheet(setColor);
     ui->aboutBtn->setStyleSheet(setColor);
     ui->settingBtn->setStyleSheet(setColor);
 
     ui->welcomeBtn->setStyleSheet(setOnlyColor);
 
-//    updateQss();
 
 }
+
 
 //切换菜单导航主页面显示路况监控
 void Widget::onMainBtnClicked()
 {
     ui->mapBoardSkd->setCurrentWidget(this->mapWidget);
-//    ui->controlBoardSkd->show();
+    if(ui->connectBtn->text()=="已连接")
+    {
+        ui->controlBoardSkd->show();
+    }
     ui->controlBoardSkd->setCurrentWidget(this->lightcontrollBoard);
 
     //颜色设置
@@ -134,6 +153,7 @@ void Widget::onMainBtnClicked()
     ui->welcomeBtn->setStyleSheet(setColor);
     ui->carMapBtn->setStyleSheet(setColor);
     ui->autoNavigationBtn->setStyleSheet(setColor);
+    ui->flowCountBtn->setStyleSheet(setColor);
     ui->aboutBtn->setStyleSheet(setColor);
     ui->settingBtn->setStyleSheet(setColor);
 
@@ -145,7 +165,10 @@ void Widget::onCarMapBtnClicked()
 {
 
     ui->mapBoardSkd->setCurrentWidget(this->carMapWidget);
-//    ui->controlBoardSkd->show();
+    if(ui->connectBtn->text()=="已连接")
+    {
+        ui->controlBoardSkd->show();
+    }
     ui->controlBoardSkd->setCurrentWidget(this->carcontrollBoard);
 
     //颜色设置
@@ -154,6 +177,7 @@ void Widget::onCarMapBtnClicked()
     ui->mainBtn->setStyleSheet(setColor);
     ui->welcomeBtn->setStyleSheet(setColor);
     ui->autoNavigationBtn->setStyleSheet(setColor);
+    ui->flowCountBtn->setStyleSheet(setColor);
     ui->aboutBtn->setStyleSheet(setColor);
     ui->settingBtn->setStyleSheet(setColor);
 
@@ -165,6 +189,10 @@ void Widget::onCarMapBtnClicked()
 void Widget::onAutoNavigationBtnClicked()
 {
     ui->mapBoardSkd->setCurrentWidget(this->autoNavigationWidget);
+    if(ui->connectBtn->text()=="已连接")
+    {
+        ui->controlBoardSkd->show();
+    }
 //    ui->controlBoardSkd->show();
     ui->controlBoardSkd->setCurrentWidget(this->navigationBoard);
 
@@ -173,6 +201,7 @@ void Widget::onAutoNavigationBtnClicked()
     QString setOnlyColor="background-color:red;color:white";
     ui->mainBtn->setStyleSheet(setColor);
     ui->welcomeBtn->setStyleSheet(setColor);
+    ui->flowCountBtn->setStyleSheet(setColor);
     ui->aboutBtn->setStyleSheet(setColor);
     ui->settingBtn->setStyleSheet(setColor);
     ui->carMapBtn->setStyleSheet(setColor);
@@ -185,7 +214,6 @@ void Widget::onAutoNavigationBtnClicked()
 
 void Widget::onAboutBtnClicked()
 {
-//    ui->controlBoardSkd->hide();
     //颜色设置
     QString setColor="background-color:black;color:#95a0aa";
     QString setOnlyColor="background-color:red;color:white";
@@ -193,6 +221,7 @@ void Widget::onAboutBtnClicked()
     ui->welcomeBtn->setStyleSheet(setColor);
     ui->carMapBtn->setStyleSheet(setColor);
     ui->autoNavigationBtn->setStyleSheet(setColor);
+    ui->flowCountBtn->setStyleSheet(setColor);
     ui->settingBtn->setStyleSheet(setColor);
 
     ui->aboutBtn->setStyleSheet(setOnlyColor);
@@ -218,6 +247,7 @@ void Widget::onSettingBtnClicked()
     ui->welcomeBtn->setStyleSheet(setColor);
     ui->carMapBtn->setStyleSheet(setColor);
     ui->autoNavigationBtn->setStyleSheet(setColor);
+    ui->flowCountBtn->setStyleSheet(setColor);
     ui->aboutBtn->setStyleSheet(setColor);
 
     ui->settingBtn->setStyleSheet(setOnlyColor);
@@ -229,14 +259,11 @@ void Widget::onConnectBtnClicked()
 {
     if(ui->connectBtn->text()=="已连接"){
         conServer->disconnectServer();
-//        ui->connectBtn->setStyleSheet("background-color:black;color:white;");
-//        ui->connectBtn->setText("已断开");
+
         qDebug()<<"lyy:disconnect";
 
     } else {
         conServer->connectServer(settingDialog->getHostAddr(),settingDialog->getHostPort());
-//        ui->connectBtn->setText("已连接");
-//        ui->connectBtn->setStyleSheet("background-color:green;color:white;");
         qDebug()<<"lyy:connect";
     }
 }

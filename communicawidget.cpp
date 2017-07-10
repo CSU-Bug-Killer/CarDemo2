@@ -48,6 +48,7 @@ void CommunicaWidget::readMesg() //读取信息
     QByteArray qba = m_tcpSocket->readAll();
     qDebug()<<qba;
     QString ss=QVariant(qba).toString();
+    qDebug()<<"lyy:receive message:"<<ss;
     emit signalReadMesg(ss);
 }
 
